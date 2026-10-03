@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quiz de Habilidades Blandas</title>
+
+<style>
+*{box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f4f6f8;margin:0;color:#202124;line-height:1.5}
+header{background:#263238;color:white;padding:28px 20px}
+header h1{margin:0 0 6px;font-size:28px}
+header p{margin:0;color:#d8e0e3}
+main{max-width:1000px;margin:20px auto;padding:0 16px}
+.card{background:white;border-radius:12px;padding:22px;margin:16px 0;box-shadow:0 2px 8px #0001}
+h2{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+label{font-weight:bold;display:block;margin-bottom:6px}
+input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;font-size:15px;background:#fff}
+.instructions{background:#eef5ff;border-left:5px solid #1565c0;padding:14px 16px;border-radius:8px}
+.small{font-size:13px;color:#5f6368}
+.question{display:none}
+.question.active{display:block}
+.question-number{font-size:13px;color:#1565c0;font-weight:bold;margin-bottom:8px}
+.question h3{font-size:19px;line-height:1.45;margin:8px 0 20px}
+.option{display:block;border:1px solid #d5d9dc;border-radius:9px;padding:13px 14px;margin:10px 0;cursor:pointer;background:#fff;transition:.15s}
+.option:hover{background:#f7f9fa;border-color:#90a4ae}
+.option input{width:auto;margin-right:10px;accent-color:#1565c0}
+.option.selected{border-color:#1565c0;background:#eef5ff}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.btn{border:0;border-radius:8px;padding:12px 18px;cursor:pointer;font-weight:bold;font-size:15px}
+.primary{background:#1565c0;color:white}
+.success{background:#2e7d32;color:white}
+.secondary{background:#eceff1;color:#202124}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.progress{height:8px;background:#e4e7e9;border-radius:20px;overflow:hidden;margin:12px 0 22px}
+.progress-bar{height:100%;background:#1565c0;width:20%;transition:.2s}
+#quizSection,#resultSection{display:none}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.metric{padding:18px;border-radius:9px;background:#eceff1;text-align:center}
+.metric b{display:block;font-size:28px;margin-top:5px}
+.hb-card{padding:15px;border:1px solid #ddd;border-radius:9px;background:#fafafa}
+.hb-card strong{display:block;margin-bottom:6px}
+.hb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:16px}
+.question-result{background:white;border-radius:12px;padding:18px;margin:12px 0;border-left:6px solid #9e9e9e;box-shadow:0 2px 7px #0001}
+.question-result.correct{border-left-color:#2e7d32}
+.question-result.incorrect{border-left-color:#c62828}
+.result-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}
+.correct-text{color:#2e7d32;font-weight:bold}
+.incorrect-text{color:#c62828;font-weight:bold}
+.answer-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.answer-box{background:#f7f7f7;padding:11px;border-radius:8px}
+.answer-box span{display:block;font-size:12px;color:#666;margin-bottom:3px}
+.explanation{background:#fff4e5;border:1px solid #ffd59a;padding:13px;border-radius:8px;margin-top:12px}
+.explanation strong{display:block;color:#9a5b00;margin-bottom:4px}
+.final-message{background:#eef8f0;border:1px solid #b8dcbc;padding:18px;border-radius:10px;margin-top:18px;text-align:center}
+@media(max-width:650px){
+ header h1{font-size:23px}
+ .answer-row{grid-template-columns:1fr}
+ .nav{flex-direction:column}
+ .nav .btn{width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🧠 Quiz de Habilidades Blandas</h1>
+<p>Escucha activa y comunicación asertiva</p>
+</header>
+
+<main>
+
+<section class="card" id="registrationSection">
+<h2>1. Datos del alumno</h2>
+
+<div class="grid">
+<div>
+<label for="studentName">Nombre del alumno</label>
+<input id="studentName" type="text" placeholder="Nombre completo">
+</div>
+
+<div>
+<label for="studentEmail">Correo institucional</label>
+<input id="studentEmail" type="email" placeholder="correo@institucion.edu">
+</div>
+
+<div>
+<label for="studentSubject">Materia</label>
+<select id="studentSubject">
+<option value="">Selecciona una materia</option>
+<option>Aseguramiento de Calidad</option>
+<option>Proyectos de Procesos de Manufactura</option>
+<option>Matemáticas Financieras II</option>
+<option>Cálculo I</option>
+<option>Procesos de Certificación</option>
+<option>Ingeniería de Métodos</option>
+</select>
+</div>
+</div>
+
+<div class="instructions" style="margin-top:18px">
+<strong>Objetivo:</strong> evaluar la aplicación de la escucha activa y la comunicación asertiva en situaciones profesionales.
+<br><br>
+<strong>Instrucciones:</strong> lee cada situación y selecciona la alternativa que representa la actuación más adecuada.
+</div>
+
+<button class="btn primary" style="margin-top:18px" onclick="startQuiz()">Comenzar quiz</button>
+</section>
+
+
+<section class="card" id="quizSection">
+
+<h2>2. Evaluación</h2>
+
+<div class="small" id="questionCounter">Pregunta 1 de 5</div>
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+<div id="questionsContainer"></div>
+
+<div class="nav">
+<button class="btn secondary" id="prevBtn" onclick="previousQuestion()">← Anterior</button>
+<button class="btn primary" id="nextBtn" onclick="nextQuestion()">Siguiente →</button>
+</div>
+
+</section>
+
+
+<section class="card" id="resultSection">
+
+<h2>RESULTADO DEL QUIZ</h2>
+<p class="small">Escucha activa y comunicación asertiva</p>
+
+<div class="grid" style="margin-bottom:18px">
+<div><b>Alumno:</b><br><span id="resultName"></span></div>
+<div><b>Materia:</b><br><span id="resultSubject"></span></div>
+<div><b>Semana/Evaluación:</b><br><span id="resultWeek"></span></div>
+<div><b>Fecha y hora:</b><br><span id="resultDate"></span></div>
+</div>
+
+<div class="metrics">
+<div class="metric">Calificación<b id="scoreNumber">0.0</b><span>/ 10</span></div>
+<div class="metric">Aciertos<b id="correctCount">0/5</b></div>
+</div>
+
+<h3 style="margin-top:24px">Desempeño por habilidad</h3>
+
+<div class="hb-grid">
+<div class="hb-card">
+<strong>👂 Escucha activa</strong>
+<span id="activeListening">0 / 2</span>
+</div>
+
+<div class="hb-card">
+<strong>💬 Comunicación asertiva</strong>
+<span id="assertiveCommunication">0 / 2</span>
+</div>
+
+<div class="hb-card">
+<strong>🔄 Integración de ambas HB</strong>
+<span id="integration">0 / 1</span>
+</div>
+</div>
+
+<h3 style="margin-top:28px">Revisión de tus respuestas</h3>
+<div id="reviewContainer"></div>
+
+<div class="final-message">
+<strong>✓ Quiz finalizado</strong>
+<p class="small">Tu calificación y retroalimentación están disponibles arriba. Revisa especialmente las respuestas incorrectas.</p>
+<p class="small" id="saveStatus" style="margin-top:10px">Registrando resultado...</p>
+</div>
+
+</section>
+
+</main>
+
+<script>
+
+const URL_APPS_SCRIPT =
+"https://script.google.com/macros/s/AKfycbyQ3DtyBgSR9svKvKULk2VDASdeE9d7jdFEwDOuxbrwjfg1eScvKIByvS1mFoYcO9hF/exec";
+
+// =====================================================
+// CONFIGURACIÓN DE ESTA EVALUACIÓN
+// Para el siguiente quiz solo cambia estos valores.
+// =====================================================
+const SEMANA_EVALUACION = "Semana 1";
+const HB_EVALUADAS = "Escucha activa; Comunicación asertiva; Integración";
+
+const preguntas = [
+
+{
+numero:1,
+hb:"Escucha activa",
+texto:"Durante una reunión de trabajo se detecta una desviación en un proceso que está afectando los resultados del área. Un integrante del equipo afirma que el problema se debe principalmente a un error cometido por otro compañero. Sin embargo, otra persona señala que podrían existir diferentes factores involucrados.",
+opciones:{
+A:"Solicitar que se presenten primero las evidencias disponibles y, después, permitir que cada integrante explique su interpretación del problema.",
+B:"Escuchar las diferentes explicaciones, realizar preguntas para aclarar los puntos relevantes, reformular lo comprendido y contrastar las opiniones con la información disponible.",
+C:"Evitar señalar posibles responsables hasta tener una conclusión y pedir al responsable del área que determine qué información debe considerarse.",
+D:"Permitir que cada integrante exponga su opinión y posteriormente seleccionar la explicación que tenga mayor relación con los resultados observados."
+},
+correcta:"B",
+explicacion:"La escucha activa implica comprender las diferentes posiciones, realizar preguntas para aclarar la información, reformular lo comprendido y contrastar las opiniones con evidencias antes de establecer una conclusión."
+},
+
+{
+numero:2,
+hb:"Comunicación asertiva",
+texto:"Durante una reunión de proyecto, identificas que una decisión tomada por el equipo puede generar dificultades para cumplir con los requisitos establecidos. Algunos compañeros consideran que cuestionar la decisión podría retrasar el proyecto.",
+opciones:{
+A:"Expresar la preocupación de manera directa, explicar con datos qué requisito podría verse afectado y proponer revisar alternativas antes de continuar.",
+B:"Esperar a que aparezca el problema para demostrar que la decisión inicial no era adecuada y posteriormente plantear una alternativa.",
+C:"Señalar que la decisión es incorrecta y solicitar que se modifique antes de continuar, ya que cumplir con los requisitos debe ser la prioridad.",
+D:"Compartir la preocupación con el responsable del proyecto de manera privada para evitar generar desacuerdos durante la reunión."
+},
+correcta:"A",
+explicacion:"La comunicación asertiva permite expresar una preocupación de manera clara y respetuosa, utilizando información objetiva y proponiendo alternativas para atender el problema."
+},
+
+{
+numero:3,
+hb:"Escucha activa",
+texto:"Durante la implementación de un nuevo procedimiento, un compañero expresa inconformidad porque considera que el cambio dificultará su trabajo. Otro integrante del equipo responde que 'simplemente debe adaptarse' porque el nuevo procedimiento ya fue autorizado.",
+opciones:{
+A:"Explicar al compañero las razones por las que se implementó el cambio y posteriormente preguntarle si tiene alguna duda.",
+B:"Reconocer su preocupación, solicitar que explique qué aspectos del procedimiento considera problemáticos y verificar si esas dificultades pueden contrastarse con la operación real.",
+C:"Escuchar su comentario y transmitirlo al supervisor para que determine si existe algún problema con el nuevo procedimiento.",
+D:"Permitir que explique su inconformidad y posteriormente señalarle los beneficios que tendrá el nuevo procedimiento para el área."
+},
+correcta:"B",
+explicacion:"Escuchar activamente implica reconocer la preocupación de la otra persona, profundizar mediante preguntas y verificar la situación antes de emitir una conclusión."
+},
+
+{
+numero:4,
+hb:"Comunicación asertiva",
+texto:"Durante una revisión de resultados, detectas que un compañero presentó información que contiene un error. El dato podría afectar una decisión del equipo, pero señalarlo públicamente podría generar una reacción defensiva.",
+opciones:{
+A:"Señalar inmediatamente el error frente al equipo para evitar que se tome una decisión basada en información incorrecta.",
+B:"Esperar a que termine la reunión y comunicarle posteriormente que el dato presentado podría contener un error.",
+C:"Indicar de manera respetuosa el dato que requiere revisión, explicar por qué puede afectar la decisión y proponer verificar conjuntamente la información.",
+D:"Solicitar al responsable de la reunión que revise nuevamente los datos antes de continuar, sin señalar directamente dónde podría encontrarse el error."
+},
+correcta:"C",
+explicacion:"Una comunicación asertiva permite señalar el problema sin atacar a la persona, explicar sus posibles consecuencias y proponer verificar conjuntamente la información."
+},
+
+{
+numero:5,
+hb:"Integración",
+texto:"Durante un proyecto, un cliente interno solicita modificar una parte del proceso porque considera que la solución propuesta no responde completamente a sus necesidades. El equipo considera que realizar el cambio podría afectar el tiempo de entrega y algunos recursos ya asignados.",
+opciones:{
+A:"Explicar al cliente que el cambio afectaría el proyecto y solicitarle que mantenga la propuesta original para evitar retrasos.",
+B:"Escuchar las razones y necesidades que originan la solicitud, confirmar que fueron comprendidas, explicar las restricciones existentes y negociar alternativas viables antes de comprometer una solución.",
+C:"Analizar internamente el impacto del cambio y posteriormente comunicar al cliente cuáles modificaciones pueden aceptarse sin afectar el proyecto.",
+D:"Aceptar la solicitud del cliente y reorganizar las actividades del equipo, procurando resolver posteriormente las posibles consecuencias sobre tiempo y recursos."
+},
+correcta:"B",
+explicacion:"La integración de ambas habilidades requiere comprender las necesidades de la otra persona, confirmar lo entendido, comunicar las restricciones existentes y buscar alternativas viables."
+}
+
+];
+
+let currentQuestion = 0;
+let respuestas = Array(preguntas.length).fill(null);
+let datosAlumno = {};
+
+function startQuiz(){
+
+const nombre = document.getElementById("studentName").value.trim();
+const correo = document.getElementById("studentEmail").value.trim();
+const materia = document.getElementById("studentSubject").value;
+
+if(!nombre){
+alert("Captura el nombre completo del alumno.");
+return;
+}
+
+if(!correo || !correo.includes("@")){
+alert("Captura un correo institucional válido.");
+return;
+}
+
+if(!materia){
+alert("Selecciona la materia.");
+return;
+}
+
+datosAlumno = {nombre,correo,materia};
+
+document.getElementById("registrationSection").style.display="none";
+document.getElementById("quizSection").style.display="block";
+
+renderQuestions();
+showQuestion(0);
+
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function renderQuestions(){
+
+const container=document.getElementById("questionsContainer");
+container.innerHTML="";
+
+preguntas.forEach((p,index)=>{
+
+const div=document.createElement("div");
+div.className="question";
+div.id="question-"+index;
+
+const opciones=Object.entries(p.opciones).map(([letra,texto])=>`
+<label class="option" id="option-${index}-${letra}">
+<input type="radio" name="question-${index}" value="${letra}" onchange="selectAnswer(${index},'${letra}')">
+<b>${letra})</b> ${texto}
+</label>
+`).join("");
+
+div.innerHTML=`
+<div class="question-number">HABILIDAD: ${p.hb}</div>
+<h3>${p.numero}. ${p.texto}</h3>
+${opciones}
+`;
+
+container.appendChild(div);
+});
+
+}
+
+function selectAnswer(index,letra){
+
+respuestas[index]=letra;
+
+document.querySelectorAll(`#question-${index} .option`)
+.forEach(el=>el.classList.remove("selected"));
+
+document.getElementById(`option-${index}-${letra}`)
+.classList.add("selected");
+}
+
+function showQuestion(index){
+
+currentQuestion=index;
+
+document.querySelectorAll(".question")
+.forEach(q=>q.classList.remove("active"));
+
+document.getElementById("question-"+index).classList.add("active");
+
+document.getElementById("questionCounter").textContent=
+`Pregunta ${index+1} de ${preguntas.length}`;
+
+document.getElementById("progressBar").style.width=
+`${((index+1)/preguntas.length)*100}%`;
+
+document.getElementById("prevBtn").disabled=index===0;
+
+const nextBtn=document.getElementById("nextBtn");
+
+if(index===preguntas.length-1){
+nextBtn.textContent="🏁 Finalizar quiz";
+nextBtn.className="btn success";
+}else{
+nextBtn.textContent="Siguiente →";
+nextBtn.className="btn primary";
+}
+
+}
+
+function nextQuestion(){
+
+if(!respuestas[currentQuestion]){
+alert("Selecciona una respuesta antes de continuar.");
+return;
+}
+
+if(currentQuestion<preguntas.length-1){
+showQuestion(currentQuestion+1);
+window.scrollTo({top:0,behavior:"smooth"});
+}else{
+finishQuiz();
+}
+}
+
+function previousQuestion(){
+
+if(currentQuestion>0){
+showQuestion(currentQuestion-1);
+window.scrollTo({top:0,behavior:"smooth"});
+}
+}
+
+function finishQuiz(){
+
+const sinResponder=respuestas.findIndex(r=>!r);
+
+if(sinResponder!==-1){
+alert(`Falta responder la pregunta ${sinResponder+1}.`);
+showQuestion(sinResponder);
+return;
+}
+
+calculateResults();
+document.getElementById("quizSection").style.display="none";
+document.getElementById("resultSection").style.display="block";
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+// El resultado ya está visible. Ahora se intenta registrar en Google Sheets.
+sendResults();
+}
+
+function calculateResults(){
+
+let aciertos=0;
+let escucha=0;
+let asertiva=0;
+let integracion=0;
+
+preguntas.forEach((p,i)=>{
+
+const correcta=respuestas[i]===p.correcta;
+
+if(correcta) aciertos++;
+
+if((p.numero===1 || p.numero===3) && correcta) escucha++;
+
+if((p.numero===2 || p.numero===4) && correcta) asertiva++;
+
+if(p.numero===5 && correcta) integracion++;
+
+});
+
+const calificacion=(aciertos/preguntas.length)*10;
+
+document.getElementById("resultName").textContent=datosAlumno.nombre;
+document.getElementById("resultSubject").textContent=datosAlumno.materia;
+document.getElementById("resultWeek").textContent=SEMANA_EVALUACION;
+
+document.getElementById("resultDate").textContent=
+new Date().toLocaleString("es-MX",{dateStyle:"short",timeStyle:"short"});
+
+document.getElementById("scoreNumber").textContent=
+calificacion.toFixed(1);
+
+document.getElementById("correctCount").textContent=
+`${aciertos}/5`;
+
+document.getElementById("activeListening").textContent=
+`${escucha}/2`;
+
+document.getElementById("assertiveCommunication").textContent=
+`${asertiva}/2`;
+
+document.getElementById("integration").textContent=
+`${integracion}/1`;
+
+renderReview();
+
+return {aciertos,calificacion,escucha,asertiva,integracion};
+}
+
+function renderReview(){
+
+const container=document.getElementById("reviewContainer");
+container.innerHTML="";
+
+preguntas.forEach((p,i)=>{
+
+const respuesta=respuestas[i];
+const correcta=respuesta===p.correcta;
+
+const card=document.createElement("div");
+
+card.className=
+"question-result "+(correcta?"correct":"incorrect");
+
+card.innerHTML=`
+
+<div class="result-head">
+
+<strong>Pregunta ${p.numero}</strong>
+
+<span class="${correcta?"correct-text":"incorrect-text"}">
+${correcta?"✓ CORRECTA":"✗ INCORRECTA"}
+</span>
+
+</div>
+
+<p><b>Habilidad:</b> ${p.hb}</p>
+
+<div class="answer-row">
+
+<div class="answer-box">
+<span>Tu respuesta</span>
+<strong>${respuesta}) ${p.opciones[respuesta]}</strong>
+</div>
+
+<div class="answer-box">
+<span>Respuesta correcta</span>
+<strong>${p.correcta}) ${p.opciones[p.correcta]}</strong>
+</div>
+
+</div>
+
+${!correcta?`
+<div class="explanation">
+<strong>¿Por qué?</strong>
+${p.explicacion}
+</div>
+`:""}
+
+`;
+
+container.appendChild(card);
+
+});
+
+}
+
+async function sendResults(){
+
+const result=calculateResults();
+
+const datos={
+  tipo:"quiz_habilidades_blandas",
+  semana:SEMANA_EVALUACION,
+  nombre:datosAlumno.nombre,
+  correo:datosAlumno.correo,
+  materia:datosAlumno.materia,
+  hbEvaluadas:HB_EVALUADAS,
+  p1:respuestas[0],
+  p2:respuestas[1],
+  p3:respuestas[2],
+  p4:respuestas[3],
+  p5:respuestas[4],
+  aciertos:result.aciertos,
+  calificacionGeneral:result.calificacion.toFixed(1),
+  desempenoHB:`Escucha activa: ${result.escucha}/2; Comunicación asertiva: ${result.asertiva}/2; Integración: ${result.integracion}/1`
+};
+
+const status=document.getElementById("saveStatus");
+
+try{
+
+const response=await fetch(URL_APPS_SCRIPT,{
+method:"POST",
+headers:{
+"Content-Type":"text/plain;charset=utf-8"
+},
+body:JSON.stringify(datos)
+});
+
+const respuestaServidor=await response.json();
+
+if(respuestaServidor.exito){
+
+status.textContent="✓ Resultado registrado correctamente.";
+status.style.color="#2e7d32";
+
+console.log("Resultado registrado:",respuestaServidor);
+
+}else{
+
+status.textContent="El resultado quedó visible, pero no pudo confirmarse el registro en Google Sheets.";
+status.style.color="#9a5b00";
+
+console.warn("Respuesta no exitosa:",respuestaServidor);
+
+}
+
+}catch(error){
+
+status.textContent="El resultado está disponible. El registro en Google Sheets no pudo completarse en esta ocasión.";
+status.style.color="#9a5b00";
+
+console.error("No fue posible registrar el resultado:",error);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
