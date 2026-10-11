@@ -185,81 +185,75 @@ const URL_APPS_SCRIPT =
 // CONFIGURACIÓN DE ESTA EVALUACIÓN
 // Para el siguiente quiz solo cambia estos valores.
 // =====================================================
-const SEMANA_EVALUACION = "Semana 1";
+const SEMANA_EVALUACION = "Semana 2";
 const HB_EVALUADAS = "Escucha activa; Comunicación asertiva; Integración";
 
 const preguntas = [
-
 {
 numero:1,
 hb:"Escucha activa",
-texto:"Durante una reunión de trabajo se detecta una desviación en un proceso que está afectando los resultados del área. Un integrante del equipo afirma que el problema se debe principalmente a un error cometido por otro compañero. Sin embargo, otra persona señala que podrían existir diferentes factores involucrados.",
+texto:"En una empresa manufacturera, el equipo detecta que varios productos presentan defectos. Durante la reunión, un operador afirma que el problema se debe a la materia prima, mientras que el supervisor considera que puede estar relacionado con la forma de operar la máquina. Ambos defienden su postura.",
 opciones:{
-A:"Solicitar que se presenten primero las evidencias disponibles y, después, permitir que cada integrante explique su interpretación del problema.",
-B:"Escuchar las diferentes explicaciones, realizar preguntas para aclarar los puntos relevantes, reformular lo comprendido y contrastar las opiniones con la información disponible.",
-C:"Evitar señalar posibles responsables hasta tener una conclusión y pedir al responsable del área que determine qué información debe considerarse.",
-D:"Permitir que cada integrante exponga su opinión y posteriormente seleccionar la explicación que tenga mayor relación con los resultados observados."
+A:"Solicitar al supervisor que tome una decisión para evitar que la reunión se prolongue.",
+B:"Escuchar ambas explicaciones, preguntar qué evidencias respaldan cada una, resumir lo comprendido y verificar la información antes de concluir.",
+C:"Dar prioridad a la opinión del operador porque participa directamente en el proceso de producción.",
+D:"Permitir que ambos expongan sus argumentos y apoyar la explicación que parezca más convincente."
 },
 correcta:"B",
-explicacion:"La escucha activa implica comprender las diferentes posiciones, realizar preguntas para aclarar la información, reformular lo comprendido y contrastar las opiniones con evidencias antes de establecer una conclusión."
+explicacion:"La escucha activa implica atender las diferentes perspectivas, formular preguntas para comprenderlas, confirmar que se interpretaron correctamente y contrastarlas con evidencias. No consiste únicamente en escuchar opiniones ni en decidir cuál parece más convincente."
 },
-
 {
 numero:2,
 hb:"Comunicación asertiva",
-texto:"Durante una reunión de proyecto, identificas que una decisión tomada por el equipo puede generar dificultades para cumplir con los requisitos establecidos. Algunos compañeros consideran que cuestionar la decisión podría retrasar el proyecto.",
+texto:"En un proyecto de ingeniería, el responsable establece una fecha de entrega que deja poco tiempo para realizar las pruebas finales. Consideras que cumplir ese plazo sin revisar los resultados puede generar errores, pero te preocupa que expresar tu desacuerdo sea interpretado como falta de compromiso.",
 opciones:{
-A:"Expresar la preocupación de manera directa, explicar con datos qué requisito podría verse afectado y proponer revisar alternativas antes de continuar.",
-B:"Esperar a que aparezca el problema para demostrar que la decisión inicial no era adecuada y posteriormente plantear una alternativa.",
-C:"Señalar que la decisión es incorrecta y solicitar que se modifique antes de continuar, ya que cumplir con los requisitos debe ser la prioridad.",
-D:"Compartir la preocupación con el responsable del proyecto de manera privada para evitar generar desacuerdos durante la reunión."
+A:"Aceptar la fecha establecida y realizar las pruebas únicamente si queda tiempo disponible.",
+B:"Comentar con otros integrantes que el plazo es poco realista y esperar a que ellos expresen la misma preocupación.",
+C:"Informar que no puedes garantizar la calidad y dejar que el responsable decida cómo proceder.",
+D:"Explicar respetuosamente los riesgos del plazo con base en las pruebas pendientes y proponer una alternativa que permita revisar la calidad antes de entregar."
 },
-correcta:"A",
-explicacion:"La comunicación asertiva permite expresar una preocupación de manera clara y respetuosa, utilizando información objetiva y proponiendo alternativas para atender el problema."
+correcta:"D",
+explicacion:"La comunicación asertiva permite expresar una preocupación con claridad y respeto, respaldarla con razones concretas y proponer soluciones. Aceptar sin advertir el riesgo, hablar indirectamente o limitarse a señalar el problema no favorece una decisión informada."
 },
-
 {
 numero:3,
 hb:"Escucha activa",
-texto:"Durante la implementación de un nuevo procedimiento, un compañero expresa inconformidad porque considera que el cambio dificultará su trabajo. Otro integrante del equipo responde que 'simplemente debe adaptarse' porque el nuevo procedimiento ya fue autorizado.",
+texto:"En el área de logística se implementa un nuevo sistema para registrar las entradas y salidas de materiales. Un compañero comenta que el procedimiento le hace perder tiempo y que el método anterior era más práctico. Otro integrante responde que debe acostumbrarse porque la decisión ya fue autorizada.",
 opciones:{
-A:"Explicar al compañero las razones por las que se implementó el cambio y posteriormente preguntarle si tiene alguna duda.",
-B:"Reconocer su preocupación, solicitar que explique qué aspectos del procedimiento considera problemáticos y verificar si esas dificultades pueden contrastarse con la operación real.",
-C:"Escuchar su comentario y transmitirlo al supervisor para que determine si existe algún problema con el nuevo procedimiento.",
-D:"Permitir que explique su inconformidad y posteriormente señalarle los beneficios que tendrá el nuevo procedimiento para el área."
+A:"Preguntarle qué dificultades específicas encuentra, escuchar sus ejemplos, resumir sus preocupaciones y comprobar cómo se presentan en la operación.",
+B:"Explicarle las ventajas del nuevo sistema y mostrarle que su implementación responde a una decisión de la empresa.",
+C:"Informar al supervisor de su inconformidad para que determine si necesita capacitación adicional.",
+D:"Recomendarle que utilice el nuevo sistema durante algunos días antes de volver a comentar sus dificultades."
 },
-correcta:"B",
-explicacion:"Escuchar activamente implica reconocer la preocupación de la otra persona, profundizar mediante preguntas y verificar la situación antes de emitir una conclusión."
+correcta:"A",
+explicacion:"Escuchar activamente requiere comprender la experiencia de la otra persona antes de intentar convencerla o buscar una solución. Pedir ejemplos y reformular lo entendido ayuda a identificar si existen dificultades reales en el procedimiento, sin asumir que la inconformidad es injustificada."
 },
-
 {
 numero:4,
 hb:"Comunicación asertiva",
-texto:"Durante una revisión de resultados, detectas que un compañero presentó información que contiene un error. El dato podría afectar una decisión del equipo, pero señalarlo públicamente podría generar una reacción defensiva.",
+texto:"Durante una reunión para analizar costos, un compañero interrumpe repetidamente tus explicaciones y presenta sus propias conclusiones antes de que termines. Esto impide que expongas datos importantes para la decisión del equipo.",
 opciones:{
-A:"Señalar inmediatamente el error frente al equipo para evitar que se tome una decisión basada en información incorrecta.",
-B:"Esperar a que termine la reunión y comunicarle posteriormente que el dato presentado podría contener un error.",
-C:"Indicar de manera respetuosa el dato que requiere revisión, explicar por qué puede afectar la decisión y proponer verificar conjuntamente la información.",
-D:"Solicitar al responsable de la reunión que revise nuevamente los datos antes de continuar, sin señalar directamente dónde podría encontrarse el error."
+A:"Interrumpirlo también para recuperar la palabra y demostrar que tienes información relevante.",
+B:"Esperar a que termine la reunión y solicitar al responsable que establezca reglas para futuras intervenciones.",
+C:"Expresar con respeto que necesitas terminar la explicación de los datos y pedirle que después comparta sus observaciones.",
+D:"Dejar que continúe para evitar un desacuerdo y enviar tus datos por correo al finalizar la reunión."
 },
 correcta:"C",
-explicacion:"Una comunicación asertiva permite señalar el problema sin atacar a la persona, explicar sus posibles consecuencias y proponer verificar conjuntamente la información."
+explicacion:"La comunicación asertiva permite expresar necesidades y establecer límites sin agredir ni descalificar a los demás. Interrumpir de la misma manera genera confrontación; guardar silencio o delegar el problema puede impedir que la información necesaria se comparta oportunamente."
 },
-
 {
 numero:5,
 hb:"Integración",
-texto:"Durante un proyecto, un cliente interno solicita modificar una parte del proceso porque considera que la solución propuesta no responde completamente a sus necesidades. El equipo considera que realizar el cambio podría afectar el tiempo de entrega y algunos recursos ya asignados.",
+texto:"En una empresa de distribución, el área comercial solicita preparar pedidos con una clasificación especial para atender a un cliente importante. El equipo de almacén advierte que la modificación podría aumentar el tiempo de preparación y afectar otras entregas. Ambas áreas consideran prioritarias sus necesidades.",
 opciones:{
-A:"Explicar al cliente que el cambio afectaría el proyecto y solicitarle que mantenga la propuesta original para evitar retrasos.",
-B:"Escuchar las razones y necesidades que originan la solicitud, confirmar que fueron comprendidas, explicar las restricciones existentes y negociar alternativas viables antes de comprometer una solución.",
-C:"Analizar internamente el impacto del cambio y posteriormente comunicar al cliente cuáles modificaciones pueden aceptarse sin afectar el proyecto.",
-D:"Aceptar la solicitud del cliente y reorganizar las actividades del equipo, procurando resolver posteriormente las posibles consecuencias sobre tiempo y recursos."
+A:"Pedir al gerente que determine qué área tiene prioridad y comunicar la decisión a los equipos involucrados.",
+B:"Comprender la necesidad del cliente mediante preguntas, confirmar lo solicitado y explicar con respeto las limitaciones operativas para negociar una alternativa viable entre ambas áreas.",
+C:"Aceptar la solicitud comercial y pedir al almacén que reorganice sus actividades para cumplir con el nuevo requerimiento.",
+D:"Explicar al área comercial que el almacén tiene otras entregas pendientes y solicitar que mantenga el procedimiento habitual."
 },
 correcta:"B",
-explicacion:"La integración de ambas habilidades requiere comprender las necesidades de la otra persona, confirmar lo entendido, comunicar las restricciones existentes y buscar alternativas viables."
+explicacion:"La escucha activa ayuda a identificar las necesidades reales del área comercial, mientras que la comunicación asertiva permite explicar las restricciones del almacén con claridad y respeto. Negociar una alternativa permite buscar una solución conjunta sin ignorar las necesidades del cliente ni comprometer la operación sin analizar sus consecuencias."
 }
-
 ];
 
 let currentQuestion = 0;
