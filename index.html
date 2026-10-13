@@ -67,7 +67,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 
 <header>
 <h1>🧠 Quiz de Habilidades Blandas</h1>
-<p>Escucha activa y comunicación asertiva</p>
+<p>Semana 3 · Resolución de conflictos</p>
 </header>
 
 <main>
@@ -101,7 +101,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 </div>
 
 <div class="instructions" style="margin-top:18px">
-<strong>Objetivo:</strong> evaluar la aplicación de la escucha activa y la comunicación asertiva en situaciones profesionales.
+<strong>Objetivo:</strong> evaluar la resolución de conflictos en situaciones profesionales.
 <br><br>
 <strong>Instrucciones:</strong> lee cada situación y selecciona la alternativa que representa la actuación más adecuada.
 </div>
@@ -130,7 +130,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 <section class="card" id="resultSection">
 
 <h2>RESULTADO DEL QUIZ</h2>
-<p class="small">Escucha activa y comunicación asertiva</p>
+<p class="small">Habilidad evaluada: Resolución de conflictos</p>
 
 <div class="grid" style="margin-bottom:18px">
 <div><b>Alumno:</b><br><span id="resultName"></span></div>
@@ -144,23 +144,14 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 <div class="metric">Aciertos<b id="correctCount">0/5</b></div>
 </div>
 
-<h3 style="margin-top:24px">Desempeño por habilidad</h3>
+<h3 style="margin-top:24px">Desempeño en la habilidad evaluada</h3>
 
 <div class="hb-grid">
 <div class="hb-card">
-<strong>👂 Escucha activa</strong>
-<span id="activeListening">0 / 2</span>
+<strong>🤝 Resolución de conflictos</strong>
+<span id="activeListening">0 / 5</span>
 </div>
 
-<div class="hb-card">
-<strong>💬 Comunicación asertiva</strong>
-<span id="assertiveCommunication">0 / 2</span>
-</div>
-
-<div class="hb-card">
-<strong>🔄 Integración de ambas HB</strong>
-<span id="integration">0 / 1</span>
-</div>
 </div>
 
 <h3 style="margin-top:28px">Revisión de tus respuestas</h3>
@@ -185,74 +176,74 @@ const URL_APPS_SCRIPT =
 // CONFIGURACIÓN DE ESTA EVALUACIÓN
 // Para el siguiente quiz solo cambia estos valores.
 // =====================================================
-const SEMANA_EVALUACION = "Semana 2";
-const HB_EVALUADAS = "Escucha activa; Comunicación asertiva; Integración";
+const SEMANA_EVALUACION = "Semana 3";
+const HB_EVALUADAS = "Resolución de conflictos";
 
 const preguntas = [
 {
 numero:1,
-hb:"Escucha activa",
-texto:"En una empresa manufacturera, el equipo detecta que varios productos presentan defectos. Durante la reunión, un operador afirma que el problema se debe a la materia prima, mientras que el supervisor considera que puede estar relacionado con la forma de operar la máquina. Ambos defienden su postura.",
+hb:"Resolución de conflictos",
+texto:"En una planta de producción, el supervisor de turno y el responsable de mantenimiento discrepan sobre qué atender primero. Producción necesita cumplir un pedido urgente, pero mantenimiento advierte que una máquina requiere revisión. ¿Qué debería hacer el equipo?",
 opciones:{
-A:"Solicitar al supervisor que tome una decisión para evitar que la reunión se prolongue.",
-B:"Escuchar ambas explicaciones, preguntar qué evidencias respaldan cada una, resumir lo comprendido y verificar la información antes de concluir.",
-C:"Dar prioridad a la opinión del operador porque participa directamente en el proceso de producción.",
-D:"Permitir que ambos expongan sus argumentos y apoyar la explicación que parezca más convincente."
+A:"Apoyar al supervisor de producción porque es quien responde por la entrega del pedido.",
+B:"Permitir que cada responsable defienda su postura y que la discusión continúe hasta que uno convenza al otro.",
+C:"Revisar los compromisos de entrega y la condición de la máquina, escuchar a ambas partes y acordar una secuencia de trabajo que reduzca los riesgos y las afectaciones.",
+D:"Solicitar que la gerencia tome la decisión sin analizar las alternativas con los responsables involucrados."
 },
-correcta:"B",
-explicacion:"La escucha activa implica atender las diferentes perspectivas, formular preguntas para comprenderlas, confirmar que se interpretaron correctamente y contrastarlas con evidencias. No consiste únicamente en escuchar opiniones ni en decidir cuál parece más convincente."
+correcta:"C",
+explicacion:"Resolver un conflicto requiere escuchar a las partes, revisar hechos y consecuencias, y acordar una solución basada en las prioridades operativas, no en jerarquías o preferencias personales."
 },
 {
 numero:2,
-hb:"Comunicación asertiva",
-texto:"En un proyecto de ingeniería, el responsable establece una fecha de entrega que deja poco tiempo para realizar las pruebas finales. Consideras que cumplir ese plazo sin revisar los resultados puede generar errores, pero te preocupa que expresar tu desacuerdo sea interpretado como falta de compromiso.",
+hb:"Resolución de conflictos",
+texto:"En un centro logístico, embarques y almacén necesitan utilizar el mismo montacargas durante la última hora del turno. Ambos consideran que su actividad es urgente y el desacuerdo está retrasando las operaciones. ¿Cuál es la mejor respuesta?",
 opciones:{
-A:"Aceptar la fecha establecida y realizar las pruebas únicamente si queda tiempo disponible.",
-B:"Comentar con otros integrantes que el plazo es poco realista y esperar a que ellos expresen la misma preocupación.",
-C:"Informar que no puedes garantizar la calidad y dejar que el responsable decida cómo proceder.",
-D:"Explicar respetuosamente los riesgos del plazo con base en las pruebas pendientes y proponer una alternativa que permita revisar la calidad antes de entregar."
+A:"Comparar horarios, urgencia y consecuencias de cada actividad, y acordar el uso del recurso según las prioridades operativas y los tiempos necesarios.",
+B:"Entregar el montacargas al área que lo solicitó primero, para evitar más discusiones.",
+C:"Dividir la hora exactamente a la mitad, aunque una de las actividades requiera más tiempo para completarse.",
+D:"Pedir a cada área que encuentre una alternativa por separado, sin coordinarse con la otra."
 },
-correcta:"D",
-explicacion:"La comunicación asertiva permite expresar una preocupación con claridad y respeto, respaldarla con razones concretas y proponer soluciones. Aceptar sin advertir el riesgo, hablar indirectamente o limitarse a señalar el problema no favorece una decisión informada."
+correcta:"A",
+explicacion:"La solución debe considerar información objetiva y necesidades reales para establecer un acuerdo viable que reduzca el impacto en ambas áreas."
 },
 {
 numero:3,
-hb:"Escucha activa",
-texto:"En el área de logística se implementa un nuevo sistema para registrar las entradas y salidas de materiales. Un compañero comenta que el procedimiento le hace perder tiempo y que el método anterior era más práctico. Otro integrante responde que debe acostumbrarse porque la decisión ya fue autorizada.",
+hb:"Resolución de conflictos",
+texto:"Un lote de piezas presenta defectos y dos integrantes del equipo se culpan mutuamente. La discusión está impidiendo identificar por qué ocurrió el problema. ¿Qué acción conviene tomar?",
 opciones:{
-A:"Preguntarle qué dificultades específicas encuentra, escuchar sus ejemplos, resumir sus preocupaciones y comprobar cómo se presentan en la operación.",
-B:"Explicarle las ventajas del nuevo sistema y mostrarle que su implementación responde a una decisión de la empresa.",
-C:"Informar al supervisor de su inconformidad para que determine si necesita capacitación adicional.",
-D:"Recomendarle que utilice el nuevo sistema durante algunos días antes de volver a comentar sus dificultades."
+A:"Determinar primero quién tenía asignada la operación y centrar la revisión en su responsabilidad.",
+B:"Solicitar declaraciones por escrito a cada persona y detener el análisis hasta recibirlas.",
+C:"Pedir al supervisor que decida cuál de las dos versiones parece más creíble.",
+D:"Regresar a los hechos, revisar instrucciones y condiciones del proceso, y acordar acciones correctivas y preventivas sin convertir el análisis en una búsqueda de culpables."
 },
-correcta:"A",
-explicacion:"Escuchar activamente requiere comprender la experiencia de la otra persona antes de intentar convencerla o buscar una solución. Pedir ejemplos y reformular lo entendido ayuda a identificar si existen dificultades reales en el procedimiento, sin asumir que la inconformidad es injustificada."
+correcta:"D",
+explicacion:"En un conflicto relacionado con un defecto, enfocarse en evidencias y condiciones del proceso ayuda a encontrar causas y soluciones en lugar de prolongar las acusaciones."
 },
 {
 numero:4,
-hb:"Comunicación asertiva",
-texto:"Durante una reunión para analizar costos, un compañero interrumpe repetidamente tus explicaciones y presenta sus propias conclusiones antes de que termines. Esto impide que expongas datos importantes para la decisión del equipo.",
+hb:"Resolución de conflictos",
+texto:"Dos ingenieros proponen métodos diferentes para reducir el tiempo de fabricación. Cada uno considera que su propuesta es la mejor y el equipo no logra llegar a un acuerdo. ¿Cómo deberían proceder?",
 opciones:{
-A:"Interrumpirlo también para recuperar la palabra y demostrar que tienes información relevante.",
-B:"Esperar a que termine la reunión y solicitar al responsable que establezca reglas para futuras intervenciones.",
-C:"Expresar con respeto que necesitas terminar la explicación de los datos y pedirle que después comparta sus observaciones.",
-D:"Dejar que continúe para evitar un desacuerdo y enviar tus datos por correo al finalizar la reunión."
+A:"Mantener el método actual hasta que exista una instrucción formal que indique lo contrario.",
+B:"Definir criterios comunes, comparar ambas propuestas con datos y acordar una prueba controlada para evaluar cuál cumple mejor los objetivos.",
+C:"Aplicar el método nuevo durante un día sin documentar el cambio y decidir después si conviene conservarlo.",
+D:"Dejar que la persona con mayor antigüedad elija el método que se utilizará."
 },
-correcta:"C",
-explicacion:"La comunicación asertiva permite expresar necesidades y establecer límites sin agredir ni descalificar a los demás. Interrumpir de la misma manera genera confrontación; guardar silencio o delegar el problema puede impedir que la información necesaria se comparta oportunamente."
+correcta:"B",
+explicacion:"Un acuerdo sustentado en criterios y datos permite comparar las alternativas de manera justa y resolver el desacuerdo con evidencia."
 },
 {
 numero:5,
-hb:"Integración",
-texto:"En una empresa de distribución, el área comercial solicita preparar pedidos con una clasificación especial para atender a un cliente importante. El equipo de almacén advierte que la modificación podría aumentar el tiempo de preparación y afectar otras entregas. Ambas áreas consideran prioritarias sus necesidades.",
+hb:"Resolución de conflictos",
+texto:"Un cliente solicita un cambio urgente en un pedido. El área comercial promete aceptarlo, pero almacén advierte que hacerlo podría retrasar otro embarque comprometido. ¿Qué respuesta permite resolver mejor el conflicto?",
 opciones:{
-A:"Pedir al gerente que determine qué área tiene prioridad y comunicar la decisión a los equipos involucrados.",
-B:"Comprender la necesidad del cliente mediante preguntas, confirmar lo solicitado y explicar con respeto las limitaciones operativas para negociar una alternativa viable entre ambas áreas.",
-C:"Aceptar la solicitud comercial y pedir al almacén que reorganice sus actividades para cumplir con el nuevo requerimiento.",
-D:"Explicar al área comercial que el almacén tiene otras entregas pendientes y solicitar que mantenga el procedimiento habitual."
+A:"Mantener la promesa al cliente y pedir a almacén que encuentre la forma de cumplirla.",
+B:"Suspender el cambio hasta que ambas áreas estén de acuerdo en presentar la misma postura.",
+C:"Reunir a las áreas, aclarar la necesidad del cliente, revisar los impactos en las entregas y negociar una alternativa viable con responsables y plazos definidos.",
+D:"Solicitar a la gerencia que asigne la responsabilidad y tome la decisión final por las áreas."
 },
-correcta:"B",
-explicacion:"La escucha activa ayuda a identificar las necesidades reales del área comercial, mientras que la comunicación asertiva permite explicar las restricciones del almacén con claridad y respeto. Negociar una alternativa permite buscar una solución conjunta sin ignorar las necesidades del cliente ni comprometer la operación sin analizar sus consecuencias."
+correcta:"C",
+explicacion:"La resolución de conflictos busca comprender las necesidades, evaluar consecuencias y construir un acuerdo viable con responsabilidades y plazos claros."
 }
 ];
 
@@ -407,22 +398,9 @@ sendResults();
 function calculateResults(){
 
 let aciertos=0;
-let escucha=0;
-let asertiva=0;
-let integracion=0;
 
 preguntas.forEach((p,i)=>{
-
-const correcta=respuestas[i]===p.correcta;
-
-if(correcta) aciertos++;
-
-if((p.numero===1 || p.numero===3) && correcta) escucha++;
-
-if((p.numero===2 || p.numero===4) && correcta) asertiva++;
-
-if(p.numero===5 && correcta) integracion++;
-
+if(respuestas[i]===p.correcta) aciertos++;
 });
 
 const calificacion=(aciertos/preguntas.length)*10;
@@ -430,28 +408,13 @@ const calificacion=(aciertos/preguntas.length)*10;
 document.getElementById("resultName").textContent=datosAlumno.nombre;
 document.getElementById("resultSubject").textContent=datosAlumno.materia;
 document.getElementById("resultWeek").textContent=SEMANA_EVALUACION;
-
-document.getElementById("resultDate").textContent=
-new Date().toLocaleString("es-MX",{dateStyle:"short",timeStyle:"short"});
-
-document.getElementById("scoreNumber").textContent=
-calificacion.toFixed(1);
-
-document.getElementById("correctCount").textContent=
-`${aciertos}/5`;
-
-document.getElementById("activeListening").textContent=
-`${escucha}/2`;
-
-document.getElementById("assertiveCommunication").textContent=
-`${asertiva}/2`;
-
-document.getElementById("integration").textContent=
-`${integracion}/1`;
+document.getElementById("resultDate").textContent=new Date().toLocaleString("es-MX",{dateStyle:"short",timeStyle:"short"});
+document.getElementById("scoreNumber").textContent=calificacion.toFixed(1);
+document.getElementById("correctCount").textContent=`${aciertos}/5`;
+document.getElementById("activeListening").textContent=`${aciertos}/5`;
 
 renderReview();
-
-return {aciertos,calificacion,escucha,asertiva,integracion};
+return {aciertos,calificacion};
 }
 
 function renderReview(){
@@ -517,20 +480,21 @@ async function sendResults(){
 const result=calculateResults();
 
 const datos={
-  tipo:"quiz_habilidades_blandas",
-  semana:SEMANA_EVALUACION,
-  nombre:datosAlumno.nombre,
-  correo:datosAlumno.correo,
-  materia:datosAlumno.materia,
-  hbEvaluadas:HB_EVALUADAS,
-  p1:respuestas[0],
-  p2:respuestas[1],
-  p3:respuestas[2],
-  p4:respuestas[3],
-  p5:respuestas[4],
-  aciertos:result.aciertos,
-  calificacionGeneral:result.calificacion.toFixed(1),
-  desempenoHB:`Escucha activa: ${result.escucha}/2; Comunicación asertiva: ${result.asertiva}/2; Integración: ${result.integracion}/1`
+tipo:"quiz_habilidades_blandas",
+fecha:new Date().toISOString(),
+semana:SEMANA_EVALUACION,
+nombre:datosAlumno.nombre,
+correo:datosAlumno.correo,
+materia:datosAlumno.materia,
+hbEvaluadas:HB_EVALUADAS,
+p1:respuestas[0],
+p2:respuestas[1],
+p3:respuestas[2],
+p4:respuestas[3],
+p5:respuestas[4],
+aciertos:result.aciertos,
+calificacionGeneral:result.calificacion.toFixed(1),
+desempenoHB:`Resolución de conflictos: ${result.aciertos}/5`
 };
 
 const status=document.getElementById("saveStatus");
