@@ -67,7 +67,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 
 <header>
 <h1>🧠 Quiz de Habilidades Blandas</h1>
-<p>Semana 3 · Resolución de conflictos</p>
+<p>Semana 4: Pensamiento crítico</p>
 </header>
 
 <main>
@@ -101,7 +101,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 </div>
 
 <div class="instructions" style="margin-top:18px">
-<strong>Objetivo:</strong> evaluar la resolución de conflictos en situaciones profesionales.
+<strong>Objetivo:</strong> evaluar la aplicación del pensamiento crítico en situaciones de Ingeniería Industrial y Aseguramiento de la Calidad.
 <br><br>
 <strong>Instrucciones:</strong> lee cada situación y selecciona la alternativa que representa la actuación más adecuada.
 </div>
@@ -130,7 +130,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 <section class="card" id="resultSection">
 
 <h2>RESULTADO DEL QUIZ</h2>
-<p class="small">Habilidad evaluada: Resolución de conflictos</p>
+<p class="small">Pensamiento crítico</p>
 
 <div class="grid" style="margin-bottom:18px">
 <div><b>Alumno:</b><br><span id="resultName"></span></div>
@@ -144,14 +144,13 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 <div class="metric">Aciertos<b id="correctCount">0/5</b></div>
 </div>
 
-<h3 style="margin-top:24px">Desempeño en la habilidad evaluada</h3>
+<h3 style="margin-top:24px">Desempeño por habilidad</h3>
 
 <div class="hb-grid">
 <div class="hb-card">
-<strong>🤝 Resolución de conflictos</strong>
-<span id="activeListening">0 / 5</span>
+<strong>🧠 Pensamiento crítico</strong>
+<span id="criticalThinking">0 / 5</span>
 </div>
-
 </div>
 
 <h3 style="margin-top:28px">Revisión de tus respuestas</h3>
@@ -176,77 +175,106 @@ const URL_APPS_SCRIPT =
 // CONFIGURACIÓN DE ESTA EVALUACIÓN
 // Para el siguiente quiz solo cambia estos valores.
 // =====================================================
-const SEMANA_EVALUACION = "Semana 3";
-const HB_EVALUADAS = "Resolución de conflictos";
+const SEMANA_EVALUACION = "Semana 4";
+const HB_EVALUADAS = "Pensamiento crítico";
 
 const preguntas = [
 {
 numero:1,
-hb:"Resolución de conflictos",
-texto:"En una planta de producción, el supervisor de turno y el responsable de mantenimiento discrepan sobre qué atender primero. Producción necesita cumplir un pedido urgente, pero mantenimiento advierte que una máquina requiere revisión. ¿Qué debería hacer el equipo?",
+hb:"Pensamiento crítico",
+texto:"En una línea de envasado se observa que la tasa de defectos aumenta los días que hace más calor. El supervisor concluye que “el calor afecta directamente la precisión de la máquina” y propone instalar aire acondicionado industrial de inmediato. ¿Qué respuesta demuestra un análisis con pensamiento crítico?",
 opciones:{
-A:"Apoyar al supervisor de producción porque es quien responde por la entrega del pedido.",
-B:"Permitir que cada responsable defienda su postura y que la discusión continúe hasta que uno convenza al otro.",
-C:"Revisar los compromisos de entrega y la condición de la máquina, escuchar a ambas partes y acordar una secuencia de trabajo que reduzca los riesgos y las afectaciones.",
-D:"Solicitar que la gerencia tome la decisión sin analizar las alternativas con los responsables involucrados."
+A:"Aprobar la compra del aire acondicionado inmediatamente para evitar pérdidas de producción.",
+B:"Investigar si existen variables intermedias no analizadas, como dilatación de materiales, cambios de viscosidad del insumo o comportamiento del operador, antes de asumir una causa directa.",
+C:"Ignorar la relación entre la temperatura y los defectos por no estar documentada en el manual.",
+D:"Culpar al turno de la tarde por trabajar con temperaturas más elevadas."
 },
-correcta:"C",
-explicacion:"Resolver un conflicto requiere escuchar a las partes, revisar hechos y consecuencias, y acordar una solución basada en las prioridades operativas, no en jerarquías o preferencias personales."
+correcta:"B",
+explicacion:"La coincidencia entre dos variables no demuestra por sí sola que una cause la otra. Es necesario investigar otras variables y reunir evidencia antes de decidir.",
+retroalimentacion:{
+A:"Propone una inversión antes de comprobar que la temperatura sea la causa del problema.",
+B:"Correcto. Investigar variables intermedias permite comprobar la relación observada sin confundir correlación con causalidad.",
+C:"La falta de documentación no significa que la relación deba ignorarse; debe investigarse con datos.",
+D:"Atribuir el problema a un turno sin evidencia sustituye el análisis por una suposición."
+}
 },
 {
 numero:2,
-hb:"Resolución de conflictos",
-texto:"En un centro logístico, embarques y almacén necesitan utilizar el mismo montacargas durante la última hora del turno. Ambos consideran que su actividad es urgente y el desacuerdo está retrasando las operaciones. ¿Cuál es la mejor respuesta?",
+hb:"Pensamiento crítico",
+texto:"Un inspector con 15 años de experiencia insiste en que las piezas fabricadas en la Máquina 3 siempre salen defectuosas. Durante la inspección del lote actual, revisa minuciosamente las piezas de la Máquina 3 y de forma superficial las de la Máquina 1. ¿Cómo afecta esta conducta al proceso de calidad y qué acción correctiva aplica el pensamiento crítico?",
 opciones:{
-A:"Comparar horarios, urgencia y consecuencias de cada actividad, y acordar el uso del recurso según las prioridades operativas y los tiempos necesarios.",
-B:"Entregar el montacargas al área que lo solicitó primero, para evitar más discusiones.",
-C:"Dividir la hora exactamente a la mitad, aunque una de las actividades requiera más tiempo para completarse.",
-D:"Pedir a cada área que encuentre una alternativa por separado, sin coordinarse con la otra."
+A:"Genera un sesgo de confirmación que distorsiona los datos reales; se debe estandarizar un procedimiento de muestreo aleatorio e independiente de la máquina.",
+B:"Es una práctica aceptable porque la experiencia del inspector sustituye las tablas estadísticas.",
+C:"Se debe dar de baja la Máquina 3 para resolver el problema de raíz sin verificar.",
+D:"Se debe prohibir al inspector revisar la Máquina 3 para evitar discusiones."
 },
 correcta:"A",
-explicacion:"La solución debe considerar información objetiva y necesidades reales para establecer un acuerdo viable que reduzca el impacto en ambas áreas."
+explicacion:"El sesgo de confirmación lleva a buscar o valorar más la evidencia que respalda una creencia previa. Un muestreo estandarizado permite comparar las máquinas con criterios objetivos.",
+retroalimentacion:{
+A:"Correcto. Un muestreo aleatorio y estandarizado reduce el sesgo y permite comparar las máquinas con criterios equivalentes.",
+B:"La experiencia es valiosa, pero no sustituye los datos ni los procedimientos objetivos de inspección.",
+C:"Retirar una máquina sin verificar sus resultados puede generar costos y no resolver el problema real.",
+D:"Excluir una máquina de la inspección impide obtener evidencia completa y confiable."
+}
 },
 {
 numero:3,
-hb:"Resolución de conflictos",
-texto:"Un lote de piezas presenta defectos y dos integrantes del equipo se culpan mutuamente. La discusión está impidiendo identificar por qué ocurrió el problema. ¿Qué acción conviene tomar?",
+hb:"Pensamiento crítico",
+texto:"Un proveedor propone sustituir una herramienta de corte de carburo por una de cerámica, prometiendo un “50% más de rendimiento”. El costo inicial de la herramienta de cerámica es tres veces mayor. ¿Cuál es la postura analítica que debe tomar el Ingeniero Industrial?",
 opciones:{
-A:"Determinar primero quién tenía asignada la operación y centrar la revisión en su responsabilidad.",
-B:"Solicitar declaraciones por escrito a cada persona y detener el análisis hasta recibirlas.",
-C:"Pedir al supervisor que decida cuál de las dos versiones parece más creíble.",
-D:"Regresar a los hechos, revisar instrucciones y condiciones del proceso, y acordar acciones correctivas y preventivas sin convertir el análisis en una búsqueda de culpables."
+A:"Aceptar la propuesta de inmediato para estar a la vanguardia tecnológica.",
+B:"Rechazar la propuesta únicamente por el alto costo inicial de la herramienta.",
+C:"Diseñar una prueba piloto controlada para medir el tiempo de vida útil real, el costo por pieza producida y el impacto en la rugosidad superficial antes de decidir.",
+D:"Implementar la nueva herramienta en todas las líneas de producción a la vez."
 },
-correcta:"D",
-explicacion:"En un conflicto relacionado con un defecto, enfocarse en evidencias y condiciones del proceso ayuda a encontrar causas y soluciones en lugar de prolongar las acusaciones."
+correcta:"C",
+explicacion:"Una prueba piloto controlada permite contrastar la promesa del proveedor con datos reales y evaluar los beneficios frente a los costos y la calidad obtenida.",
+retroalimentacion:{
+A:"Una promesa comercial no garantiza que el rendimiento anunciado se cumpla en las condiciones reales de producción.",
+B:"El costo inicial importa, pero debe compararse con la vida útil, el costo por pieza y la calidad obtenida.",
+C:"Correcto. La prueba piloto permite comparar el rendimiento, el costo por pieza y la rugosidad antes de aplicar el cambio.",
+D:"Cambiar todas las líneas sin pruebas previas amplifica el riesgo de pérdidas y defectos."
+}
 },
 {
 numero:4,
-hb:"Resolución de conflictos",
-texto:"Dos ingenieros proponen métodos diferentes para reducir el tiempo de fabricación. Cada uno considera que su propuesta es la mejor y el equipo no logra llegar a un acuerdo. ¿Cómo deberían proceder?",
+hb:"Pensamiento crítico",
+texto:"Se presenta una fuga constante de aceite en una prensa hidráulica. El equipo de mantenimiento limpia el derrame diariamente y coloca una bandeja de goteo para que “no manche el piso”. ¿Qué crítica técnica realiza el pensamiento crítico sobre esta solución?",
 opciones:{
-A:"Mantener el método actual hasta que exista una instrucción formal que indique lo contrario.",
-B:"Definir criterios comunes, comparar ambas propuestas con datos y acordar una prueba controlada para evaluar cuál cumple mejor los objetivos.",
-C:"Aplicar el método nuevo durante un día sin documentar el cambio y decidir después si conviene conservarlo.",
-D:"Dejar que la persona con mayor antigüedad elija el método que se utilizará."
+A:"Es la solución óptima porque evita que el aceite contamine el área de trabajo a bajo costo.",
+B:"Ataca un síntoma visual, pero ignora la causa raíz del problema, como desgaste de sellos o sobrepresión, lo que puede ocasionar una falla mayor.",
+C:"Se debe pintar la prensa de otro color para disimular la fuga.",
+D:"La solución es adecuada siempre y cuando se vacíe la bandeja de goteo cada turno."
 },
 correcta:"B",
-explicacion:"Un acuerdo sustentado en criterios y datos permite comparar las alternativas de manera justa y resolver el desacuerdo con evidencia."
+explicacion:"La limpieza y la bandeja contienen el derrame, pero no corrigen la fuga. Debe investigarse la causa raíz y atenderse el riesgo de seguridad y de daño al equipo.",
+retroalimentacion:{
+A:"Contener el derrame reduce la contaminación visible, pero no elimina la fuga ni sus riesgos.",
+B:"Correcto. La bandeja controla el síntoma; investigar sellos, presión y otras condiciones permite corregir la causa.",
+C:"Cambiar el aspecto de la máquina no modifica su condición mecánica ni detiene la fuga.",
+D:"Vaciar la bandeja es una medida de contención, no una reparación del problema."
+}
 },
 {
 numero:5,
-hb:"Resolución de conflictos",
-texto:"Un cliente solicita un cambio urgente en un pedido. El área comercial promete aceptarlo, pero almacén advierte que hacerlo podría retrasar otro embarque comprometido. ¿Qué respuesta permite resolver mejor el conflicto?",
+hb:"Pensamiento crítico",
+texto:"El área de ventas solicita liberar de emergencia un lote de productos con una ligera desviación en las especificaciones geométricas, argumentando que “el cliente no se dará cuenta y urge enviar”. ¿Cómo actúa el Ingeniero de Calidad aplicando pensamiento crítico?",
 opciones:{
-A:"Mantener la promesa al cliente y pedir a almacén que encuentre la forma de cumplirla.",
-B:"Suspender el cambio hasta que ambas áreas estén de acuerdo en presentar la misma postura.",
-C:"Reunir a las áreas, aclarar la necesidad del cliente, revisar los impactos en las entregas y negociar una alternativa viable con responsables y plazos definidos.",
-D:"Solicitar a la gerencia que asigne la responsabilidad y tome la decisión final por las áreas."
+A:"Liberar el lote para mantener conforme al departamento de ventas y cumplir la cuota del mes.",
+B:"Rechazar el lote de manera agresiva sin explicar los motivos técnicos al área de ventas.",
+C:"Evaluar objetivamente el impacto funcional del defecto mediante una matriz de riesgo y consultar la tolerancia del cliente antes de emitir un dictamen fundamentado.",
+D:"Delegar la responsabilidad del despacho al operador de montacargas."
 },
 correcta:"C",
-explicacion:"La resolución de conflictos busca comprender las necesidades, evaluar consecuencias y construir un acuerdo viable con responsabilidades y plazos claros."
+explicacion:"El análisis de riesgos, la evaluación funcional y la consulta de los requisitos del cliente permiten emitir un dictamen fundamentado y respetar los procedimientos de autorización.",
+retroalimentacion:{
+A:"Cumplir la cuota no justifica liberar productos fuera de especificación sin una evaluación y autorización apropiadas.",
+B:"La decisión debe sustentarse en criterios técnicos y comunicarse profesionalmente, no de forma agresiva.",
+C:"Correcto. La matriz de riesgo y la revisión de los requisitos del cliente ayudan a fundamentar el dictamen y la autorización correspondiente.",
+D:"Delegar el despacho no transfiere la responsabilidad técnica de determinar la conformidad del producto."
+}
 }
 ];
-
 let currentQuestion = 0;
 let respuestas = Array(preguntas.length).fill(null);
 let datosAlumno = {};
@@ -396,83 +424,38 @@ sendResults();
 }
 
 function calculateResults(){
-
 let aciertos=0;
-
-preguntas.forEach((p,i)=>{
-if(respuestas[i]===p.correcta) aciertos++;
-});
-
+preguntas.forEach((p,i)=>{ if(respuestas[i]===p.correcta) aciertos++; });
 const calificacion=(aciertos/preguntas.length)*10;
-
 document.getElementById("resultName").textContent=datosAlumno.nombre;
 document.getElementById("resultSubject").textContent=datosAlumno.materia;
 document.getElementById("resultWeek").textContent=SEMANA_EVALUACION;
 document.getElementById("resultDate").textContent=new Date().toLocaleString("es-MX",{dateStyle:"short",timeStyle:"short"});
 document.getElementById("scoreNumber").textContent=calificacion.toFixed(1);
 document.getElementById("correctCount").textContent=`${aciertos}/5`;
-document.getElementById("activeListening").textContent=`${aciertos}/5`;
-
+document.getElementById("criticalThinking").textContent=`${aciertos}/5`;
 renderReview();
-return {aciertos,calificacion};
+return {aciertos,calificacion,pensamientoCritico:aciertos};
 }
 
 function renderReview(){
-
 const container=document.getElementById("reviewContainer");
 container.innerHTML="";
-
 preguntas.forEach((p,i)=>{
-
-const respuesta=respuestas[i];
-const correcta=respuesta===p.correcta;
-
-const card=document.createElement("div");
-
-card.className=
-"question-result "+(correcta?"correct":"incorrect");
-
-card.innerHTML=`
-
-<div class="result-head">
-
-<strong>Pregunta ${p.numero}</strong>
-
-<span class="${correcta?"correct-text":"incorrect-text"}">
-${correcta?"✓ CORRECTA":"✗ INCORRECTA"}
-</span>
-
-</div>
-
-<p><b>Habilidad:</b> ${p.hb}</p>
-
-<div class="answer-row">
-
-<div class="answer-box">
-<span>Tu respuesta</span>
-<strong>${respuesta}) ${p.opciones[respuesta]}</strong>
-</div>
-
-<div class="answer-box">
-<span>Respuesta correcta</span>
-<strong>${p.correcta}) ${p.opciones[p.correcta]}</strong>
-</div>
-
-</div>
-
-${!correcta?`
-<div class="explanation">
-<strong>¿Por qué?</strong>
-${p.explicacion}
-</div>
-`:""}
-
-`;
-
-container.appendChild(card);
-
+ const respuesta=respuestas[i];
+ const correcta=respuesta===p.correcta;
+ const card=document.createElement("div");
+ card.className="question-result "+(correcta?"correct":"incorrect");
+ card.innerHTML=`
+ <div class="result-head"><strong>Pregunta ${p.numero}</strong><span class="${correcta?"correct-text":"incorrect-text"}">${correcta?"✓ CORRECTA":"✗ INCORRECTA"}</span></div>
+ <p><b>Habilidad:</b> ${p.hb}</p>
+ <div class="answer-row">
+ <div class="answer-box"><span>Tu respuesta</span><strong>${respuesta}) ${p.opciones[respuesta]}</strong></div>
+ <div class="answer-box"><span>Respuesta correcta</span><strong>${p.correcta}) ${p.opciones[p.correcta]}</strong></div>
+ </div>
+ <div class="explanation"><strong>Retroalimentación</strong>${p.retroalimentacion[respuesta]}<br><br><b>Fundamento:</b> ${p.explicacion}</div>`;
+ container.appendChild(card);
 });
-
 }
 
 async function sendResults(){
@@ -480,21 +463,20 @@ async function sendResults(){
 const result=calculateResults();
 
 const datos={
-tipo:"quiz_habilidades_blandas",
-fecha:new Date().toISOString(),
-semana:SEMANA_EVALUACION,
-nombre:datosAlumno.nombre,
-correo:datosAlumno.correo,
-materia:datosAlumno.materia,
-hbEvaluadas:HB_EVALUADAS,
-p1:respuestas[0],
-p2:respuestas[1],
-p3:respuestas[2],
-p4:respuestas[3],
-p5:respuestas[4],
-aciertos:result.aciertos,
-calificacionGeneral:result.calificacion.toFixed(1),
-desempenoHB:`Resolución de conflictos: ${result.aciertos}/5`
+  tipo:"quiz_habilidades_blandas",
+  semana:SEMANA_EVALUACION,
+  nombre:datosAlumno.nombre,
+  correo:datosAlumno.correo,
+  materia:datosAlumno.materia,
+  hbEvaluadas:HB_EVALUADAS,
+  p1:respuestas[0],
+  p2:respuestas[1],
+  p3:respuestas[2],
+  p4:respuestas[3],
+  p5:respuestas[4],
+  aciertos:result.aciertos,
+  calificacionGeneral:result.calificacion.toFixed(1),
+  desempenoHB:`Pensamiento crítico: ${result.pensamientoCritico}/5`
 };
 
 const status=document.getElementById("saveStatus");
