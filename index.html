@@ -67,7 +67,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 
 <header>
 <h1>🧠 Quiz de Habilidades Blandas</h1>
-<p>Semana 4: Pensamiento crítico</p>
+<p>Semana 5: Resolución adaptativa de conflictos</p>
 </header>
 
 <main>
@@ -101,7 +101,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 </div>
 
 <div class="instructions" style="margin-top:18px">
-<strong>Objetivo:</strong> evaluar la aplicación del pensamiento crítico en situaciones de Ingeniería Industrial y Aseguramiento de la Calidad.
+<strong>Objetivo:</strong> evaluar la resolución adaptativa de conflictos y la negociación basada en evidencia en situaciones laborales.
 <br><br>
 <strong>Instrucciones:</strong> lee cada situación y selecciona la alternativa que representa la actuación más adecuada.
 </div>
@@ -130,7 +130,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 <section class="card" id="resultSection">
 
 <h2>RESULTADO DEL QUIZ</h2>
-<p class="small">Pensamiento crítico</p>
+<p class="small">Resolución adaptativa de conflictos y negociación basada en evidencia</p>
 
 <div class="grid" style="margin-bottom:18px">
 <div><b>Alumno:</b><br><span id="resultName"></span></div>
@@ -148,7 +148,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 
 <div class="hb-grid">
 <div class="hb-card">
-<strong>🧠 Pensamiento crítico</strong>
+<strong>🤝 Resolución adaptativa de conflictos</strong>
 <span id="criticalThinking">0 / 5</span>
 </div>
 </div>
@@ -175,106 +175,112 @@ const URL_APPS_SCRIPT =
 // CONFIGURACIÓN DE ESTA EVALUACIÓN
 // Para el siguiente quiz solo cambia estos valores.
 // =====================================================
-const SEMANA_EVALUACION = "Semana 4";
-const HB_EVALUADAS = "Pensamiento crítico";
+const SEMANA_EVALUACION = "Semana 5";
+const HB_EVALUADAS = "Resolución adaptativa de conflictos y negociación basada en evidencia";
 
 const preguntas = [
 {
 numero:1,
-hb:"Pensamiento crítico",
-texto:"En una línea de envasado se observa que la tasa de defectos aumenta los días que hace más calor. El supervisor concluye que “el calor afecta directamente la precisión de la máquina” y propone instalar aire acondicionado industrial de inmediato. ¿Qué respuesta demuestra un análisis con pensamiento crítico?",
+hb:"Resolución adaptativa de conflictos",
+titulo:"Ergonomía y productividad",
+texto:"En una línea de ensamble manual, el área de Tiempos y Movimientos propone aumentar la velocidad de la cinta un 15 % para cumplir la meta de producción. Sin embargo, los operadores reportan fatiga muscular y Salud Ocupacional advierte un riesgo elevado de lesiones por movimientos repetitivos. ¿Cómo debe actuar el Ingeniero Industrial para resolver el conflicto?",
 opciones:{
-A:"Aprobar la compra del aire acondicionado inmediatamente para evitar pérdidas de producción.",
-B:"Investigar si existen variables intermedias no analizadas, como dilatación de materiales, cambios de viscosidad del insumo o comportamiento del operador, antes de asumir una causa directa.",
-C:"Ignorar la relación entre la temperatura y los defectos por no estar documentada en el manual.",
-D:"Culpar al turno de la tarde por trabajar con temperaturas más elevadas."
+A:"Aumentar la velocidad de inmediato y evaluar los resultados al finalizar el mes.",
+B:"Reducir a la mitad la meta de producción sin analizar otras alternativas.",
+C:"Pedir al supervisor que decida qué departamento debe prevalecer.",
+D:"Reunir a ambas áreas, evaluar los riesgos ergonómicos y realizar una prueba piloto con mejoras en la estación de trabajo, midiendo productividad y seguridad."
 },
-correcta:"B",
-explicacion:"La coincidencia entre dos variables no demuestra por sí sola que una cause la otra. Es necesario investigar otras variables y reunir evidencia antes de decidir.",
+correcta:"D",
+explicacion:"Integra las necesidades de producción y salud ocupacional. La prueba piloto permite negociar con evidencia, escuchar a los operadores y buscar mejoras sin comprometer su integridad física.",
 retroalimentacion:{
-A:"Propone una inversión antes de comprobar que la temperatura sea la causa del problema.",
-B:"Correcto. Investigar variables intermedias permite comprobar la relación observada sin confundir correlación con causalidad.",
-C:"La falta de documentación no significa que la relación deba ignorarse; debe investigarse con datos.",
-D:"Atribuir el problema a un turno sin evidencia sustituye el análisis por una suposición."
+A:"Propone aumentar la productividad sin comprobar el impacto en la salud de los operadores.",
+B:"Reduce drásticamente la producción sin analizar opciones que puedan mejorar el método de trabajo.",
+C:"Traslada el conflicto a otra persona en lugar de construir una solución con las áreas involucradas.",
+D:"Correcto. Combina evidencia ergonómica, escucha activa y una prueba piloto para equilibrar productividad y seguridad."
 }
 },
 {
 numero:2,
-hb:"Pensamiento crítico",
-texto:"Un inspector con 15 años de experiencia insiste en que las piezas fabricadas en la Máquina 3 siempre salen defectuosas. Durante la inspección del lote actual, revisa minuciosamente las piezas de la Máquina 3 y de forma superficial las de la Máquina 1. ¿Cómo afecta esta conducta al proceso de calidad y qué acción correctiva aplica el pensamiento crítico?",
+hb:"Negociación basada en evidencia",
+titulo:"Inventario y continuidad operativa",
+texto:"Finanzas propone eliminar el inventario de seguridad mediante una estrategia Justo a Tiempo (JIT) para reducir costos. Producción advierte que los proveedores internacionales tienen tiempos de entrega variables y que un retraso podría detener la fábrica. ¿Qué decisión técnica debe proponerse?",
 opciones:{
-A:"Genera un sesgo de confirmación que distorsiona los datos reales; se debe estandarizar un procedimiento de muestreo aleatorio e independiente de la máquina.",
-B:"Es una práctica aceptable porque la experiencia del inspector sustituye las tablas estadísticas.",
-C:"Se debe dar de baja la Máquina 3 para resolver el problema de raíz sin verificar.",
-D:"Se debe prohibir al inspector revisar la Máquina 3 para evitar discusiones."
+A:"Analizar la variabilidad de las entregas y el costo de una posible parada para calcular un inventario de seguridad adecuado y negociar un nivel de servicio entre ambas áreas.",
+B:"Eliminar todo el inventario de seguridad para cumplir inmediatamente con el objetivo financiero.",
+C:"Comprar tres veces más materiales para evitar cualquier posible desabasto.",
+D:"Cambiar de proveedores internacionales a locales sin verificar costos, capacidad ni especificaciones."
 },
 correcta:"A",
-explicacion:"El sesgo de confirmación lleva a buscar o valorar más la evidencia que respalda una creencia previa. Un muestreo estandarizado permite comparar las máquinas con criterios objetivos.",
+explicacion:"Utiliza datos para equilibrar el costo de almacenar materiales con el riesgo económico de detener la producción. La negociación debe basarse en indicadores y no en las preferencias aisladas de un departamento.",
 retroalimentacion:{
-A:"Correcto. Un muestreo aleatorio y estandarizado reduce el sesgo y permite comparar las máquinas con criterios equivalentes.",
-B:"La experiencia es valiosa, pero no sustituye los datos ni los procedimientos objetivos de inspección.",
-C:"Retirar una máquina sin verificar sus resultados puede generar costos y no resolver el problema real.",
-D:"Excluir una máquina de la inspección impide obtener evidencia completa y confiable."
+A:"Correcto. El análisis de variabilidad y costos permite definir una protección razonable frente al desabasto y negociar con datos.",
+B:"Eliminar toda protección puede reducir el inventario, pero aumenta el riesgo de detener la producción.",
+C:"Comprar en exceso genera costos de almacenamiento y obsolescencia sin demostrar que sea la mejor solución.",
+D:"Cambiar proveedores sin evaluar su capacidad, calidad y costo puede crear nuevos problemas."
 }
 },
 {
 numero:3,
-hb:"Pensamiento crítico",
-texto:"Un proveedor propone sustituir una herramienta de corte de carburo por una de cerámica, prometiendo un “50% más de rendimiento”. El costo inicial de la herramienta de cerámica es tres veces mayor. ¿Cuál es la postura analítica que debe tomar el Ingeniero Industrial?",
+hb:"Comunicación asertiva y negociación",
+titulo:"Retraso en un proyecto",
+texto:"Un proyecto de automatización de una línea de empaque presenta un retraso de tres semanas por la entrega tardía de un sensor importado. La Gerencia de Operaciones exige mantener la fecha original sin aumentar el presupuesto. ¿Cómo debe responder el gerente del proyecto?",
 opciones:{
-A:"Aceptar la propuesta de inmediato para estar a la vanguardia tecnológica.",
-B:"Rechazar la propuesta únicamente por el alto costo inicial de la herramienta.",
-C:"Diseñar una prueba piloto controlada para medir el tiempo de vida útil real, el costo por pieza producida y el impacto en la rugosidad superficial antes de decidir.",
-D:"Implementar la nueva herramienta en todas las líneas de producción a la vez."
+A:"Omitir algunas pruebas de seguridad para recuperar el tiempo perdido.",
+B:"Esperar hasta la fecha de entrega para informar que el proyecto está retrasado.",
+C:"Cancelar el proyecto sin analizar posibles alternativas de recuperación.",
+D:"Explicar el impacto del retraso y presentar escenarios, como entregas por fases o turnos adicionales, comparando costos, riesgos y efectos sobre la calidad antes de acordar una alternativa."
 },
-correcta:"C",
-explicacion:"Una prueba piloto controlada permite contrastar la promesa del proveedor con datos reales y evaluar los beneficios frente a los costos y la calidad obtenida.",
+correcta:"D",
+explicacion:"Permite negociar con transparencia y evaluar las restricciones de tiempo, costo, alcance y calidad. Se deben escuchar las prioridades del cliente sin prometer resultados que comprometan la seguridad o la calidad.",
 retroalimentacion:{
-A:"Una promesa comercial no garantiza que el rendimiento anunciado se cumpla en las condiciones reales de producción.",
-B:"El costo inicial importa, pero debe compararse con la vida útil, el costo por pieza y la calidad obtenida.",
-C:"Correcto. La prueba piloto permite comparar el rendimiento, el costo por pieza y la rugosidad antes de aplicar el cambio.",
-D:"Cambiar todas las líneas sin pruebas previas amplifica el riesgo de pérdidas y defectos."
+A:"Eliminar pruebas de seguridad puede poner en riesgo a las personas y al equipo.",
+B:"Ocultar el retraso impide que las áreas afectadas evalúen alternativas oportunamente.",
+C:"Cancelar sin estudiar escenarios descarta soluciones posibles antes de analizar su viabilidad.",
+D:"Correcto. Presentar opciones con impactos de costo, tiempo, calidad y riesgo facilita un acuerdo realista."
 }
 },
 {
 numero:4,
-hb:"Pensamiento crítico",
-texto:"Se presenta una fuga constante de aceite en una prensa hidráulica. El equipo de mantenimiento limpia el derrame diariamente y coloca una bandeja de goteo para que “no manche el piso”. ¿Qué crítica técnica realiza el pensamiento crítico sobre esta solución?",
+hb:"Pensamiento crítico y colaboración",
+titulo:"Plan de producción y mantenimiento",
+texto:"Un modelo de programación lineal identifica la combinación de productos que maximiza las utilidades de una planta química. Sin embargo, Mantenimiento advierte que ejecutar el plan a plena capacidad impediría realizar el mantenimiento mayor programado de los reactores. ¿Qué acción demuestra resolución adaptativa del conflicto basada en datos?",
 opciones:{
-A:"Es la solución óptima porque evita que el aceite contamine el área de trabajo a bajo costo.",
-B:"Ataca un síntoma visual, pero ignora la causa raíz del problema, como desgaste de sellos o sobrepresión, lo que puede ocasionar una falla mayor.",
-C:"Se debe pintar la prensa de otro color para disimular la fuga.",
-D:"La solución es adecuada siempre y cuando se vacíe la bandeja de goteo cada turno."
+A:"Mantener el programa original y confiar en que los equipos funcionarán durante todo el periodo.",
+B:"Incorporar la disponibilidad de los equipos como una restricción del modelo, evaluar escenarios de producción y coordinar el mantenimiento para reducir las pérdidas sin ignorar los riesgos.",
+C:"Detener toda la planta durante una semana sin revisar la demanda ni las alternativas.",
+D:"Modificar los registros de mantenimiento para que el modelo acepte el programa original."
 },
 correcta:"B",
-explicacion:"La limpieza y la bandeja contienen el derrame, pero no corrigen la fuga. Debe investigarse la causa raíz y atenderse el riesgo de seguridad y de daño al equipo.",
+explicacion:"Un modelo de optimización debe representar las restricciones reales del sistema. Escuchar a Mantenimiento y recalcular escenarios permite tomar una decisión viable y reducir el impacto económico.",
 retroalimentacion:{
-A:"Contener el derrame reduce la contaminación visible, pero no elimina la fuga ni sus riesgos.",
-B:"Correcto. La bandeja controla el síntoma; investigar sellos, presión y otras condiciones permite corregir la causa.",
-C:"Cambiar el aspecto de la máquina no modifica su condición mecánica ni detiene la fuga.",
-D:"Vaciar la bandeja es una medida de contención, no una reparación del problema."
+A:"Ignorar el mantenimiento puede provocar fallas, paros imprevistos y mayores costos.",
+B:"Correcto. Incorporar la disponibilidad real y comparar escenarios permite decidir con datos sin ocultar restricciones críticas.",
+C:"Una parada total sin análisis puede generar pérdidas innecesarias si existen alternativas seguras.",
+D:"Alterar registros oculta información importante y no resuelve la restricción real del sistema."
 }
 },
 {
 numero:5,
-hb:"Pensamiento crítico",
-texto:"El área de ventas solicita liberar de emergencia un lote de productos con una ligera desviación en las especificaciones geométricas, argumentando que “el cliente no se dará cuenta y urge enviar”. ¿Cómo actúa el Ingeniero de Calidad aplicando pensamiento crítico?",
+hb:"Comunicación asertiva y gestión de riesgos",
+titulo:"Falla en un dispositivo de seguridad",
+texto:"En una planta embotelladora, el sensor de bloqueo de seguridad de una empaquetadora falla de forma intermitente. El supervisor propone anularlo temporalmente para evitar detener la producción durante el turno nocturno. ¿Cómo debe responder el Ingeniero Industrial?",
 opciones:{
-A:"Liberar el lote para mantener conforme al departamento de ventas y cumplir la cuota del mes.",
-B:"Rechazar el lote de manera agresiva sin explicar los motivos técnicos al área de ventas.",
-C:"Evaluar objetivamente el impacto funcional del defecto mediante una matriz de riesgo y consultar la tolerancia del cliente antes de emitir un dictamen fundamentado.",
-D:"Delegar la responsabilidad del despacho al operador de montacargas."
+A:"Permitir la operación si los trabajadores se comprometen a tener mayor precaución.",
+B:"Detener el uso de la máquina, comunicar firmemente el riesgo, aplicar el procedimiento de aislamiento de energías que corresponda y coordinar la reparación antes de autorizar su operación.",
+C:"Discutir con el supervisor y responsabilizar públicamente a los operadores.",
+D:"Informar de la falla al siguiente turno y dejar que el personal entrante decida qué hacer."
 },
-correcta:"C",
-explicacion:"El análisis de riesgos, la evaluación funcional y la consulta de los requisitos del cliente permiten emitir un dictamen fundamentado y respetar los procedimientos de autorización.",
+correcta:"B",
+explicacion:"La seguridad de las personas no debe sacrificarse para cumplir una meta de producción. La comunicación asertiva establece un límite firme y respetuoso, mientras que el aislamiento de energías y la reparación controlada ayudan a evitar accidentes.",
 retroalimentacion:{
-A:"Cumplir la cuota no justifica liberar productos fuera de especificación sin una evaluación y autorización apropiadas.",
-B:"La decisión debe sustentarse en criterios técnicos y comunicarse profesionalmente, no de forma agresiva.",
-C:"Correcto. La matriz de riesgo y la revisión de los requisitos del cliente ayudan a fundamentar el dictamen y la autorización correspondiente.",
-D:"Delegar el despacho no transfiere la responsabilidad técnica de determinar la conformidad del producto."
+A:"La precaución personal no sustituye un dispositivo de seguridad que funciona correctamente.",
+B:"Correcto. Se establece un límite de seguridad, se controla la energía peligrosa según el procedimiento y se coordina una reparación segura.",
+C:"Una confrontación agresiva dificulta la colaboración y no sustituye el procedimiento de seguridad.",
+D:"Posponer la respuesta deja un riesgo conocido sin controlar durante el turno actual."
 }
 }
 ];
+
 let currentQuestion = 0;
 let respuestas = Array(preguntas.length).fill(null);
 let datosAlumno = {};
@@ -331,7 +337,8 @@ const opciones=Object.entries(p.opciones).map(([letra,texto])=>`
 
 div.innerHTML=`
 <div class="question-number">HABILIDAD: ${p.hb}</div>
-<h3>${p.numero}. ${p.texto}</h3>
+<h3>${p.numero}. ${p.titulo}</h3>
+<p>${p.texto}</p>
 ${opciones}
 `;
 
@@ -476,7 +483,7 @@ const datos={
   p5:respuestas[4],
   aciertos:result.aciertos,
   calificacionGeneral:result.calificacion.toFixed(1),
-  desempenoHB:`Pensamiento crítico: ${result.pensamientoCritico}/5`
+  desempenoHB:`Resolución adaptativa de conflictos: ${result.pensamientoCritico}/5`
 };
 
 const status=document.getElementById("saveStatus");
