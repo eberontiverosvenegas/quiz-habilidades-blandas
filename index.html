@@ -67,7 +67,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 
 <header>
 <h1>🧠 Quiz de Habilidades Blandas</h1>
-<p>Semana 5: Resolución adaptativa de conflictos</p>
+<p>Semana 5: Gestión de la empatía</p>
 </header>
 
 <main>
@@ -101,7 +101,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 </div>
 
 <div class="instructions" style="margin-top:18px">
-<strong>Objetivo:</strong> evaluar la resolución adaptativa de conflictos y la negociación basada en evidencia en situaciones laborales.
+<strong>Objetivo:</strong> evaluar la gestión de la empatía en situaciones laborales y profesionales.
 <br><br>
 <strong>Instrucciones:</strong> lee cada situación y selecciona la alternativa que representa la actuación más adecuada.
 </div>
@@ -130,7 +130,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 <section class="card" id="resultSection">
 
 <h2>RESULTADO DEL QUIZ</h2>
-<p class="small">Resolución adaptativa de conflictos y negociación basada en evidencia</p>
+<p class="small">Gestión de la empatía</p>
 
 <div class="grid" style="margin-bottom:18px">
 <div><b>Alumno:</b><br><span id="resultName"></span></div>
@@ -148,7 +148,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 
 <div class="hb-grid">
 <div class="hb-card">
-<strong>🤝 Resolución adaptativa de conflictos</strong>
+<strong>🤝 Gestión de la empatía</strong>
 <span id="criticalThinking">0 / 5</span>
 </div>
 </div>
@@ -176,110 +176,110 @@ const URL_APPS_SCRIPT =
 // Para el siguiente quiz solo cambia estos valores.
 // =====================================================
 const SEMANA_EVALUACION = "Semana 5";
-const HB_EVALUADAS = "Resolución adaptativa de conflictos y negociación basada en evidencia";
+const HB_EVALUADAS = "Gestión de la empatía";
 
 const preguntas = [
 {
 numero:1,
-hb:"Resolución adaptativa de conflictos",
-titulo:"Ergonomía y productividad",
-texto:"En una línea de ensamble manual, el área de Tiempos y Movimientos propone aumentar la velocidad de la cinta un 15 % para cumplir la meta de producción. Sin embargo, los operadores reportan fatiga muscular y Salud Ocupacional advierte un riesgo elevado de lesiones por movimientos repetitivos. ¿Cómo debe actuar el Ingeniero Industrial para resolver el conflicto?",
+hb:"Gestión de la empatía",
+titulo:"",
+texto:"En una auditoría externa de ISO 9001, el Gerente de Planta se niega a mostrar los registros de No Conformidad. Afirma que las auditorías son burocracia y afectan la producción. Como Auditor Líder, ¿cómo aplicarías la gestión de la empatía de manera estratégica?",
 opciones:{
-A:"Aumentar la velocidad de inmediato y evaluar los resultados al finalizar el mes.",
-B:"Reducir a la mitad la meta de producción sin analizar otras alternativas.",
-C:"Pedir al supervisor que decida qué departamento debe prevalecer.",
-D:"Reunir a ambas áreas, evaluar los riesgos ergonómicos y realizar una prueba piloto con mejoras en la estación de trabajo, midiendo productividad y seguridad."
+A:"Insistir en que debe entregar los registros porque es una obligación, advirtiéndole que su negativa será reportada inmediatamente.",
+B:"Omitir la revisión de esos registros para evitar un conflicto con el Gerente de Planta.",
+C:"Conversar en privado, reconocer la presión por cumplir la producción, explicar cómo los registros de No Conformidad ayudan a proteger la operación y acordar una revisión basada en hechos.",
+D:"Solicitar al Director General que intervenga antes de intentar dialogar con el gerente."
 },
-correcta:"D",
-explicacion:"Integra las necesidades de producción y salud ocupacional. La prueba piloto permite negociar con evidencia, escuchar a los operadores y buscar mejoras sin comprometer su integridad física.",
+correcta:"C",
+explicacion:"La empatía permite reconocer la postura defensiva y las presiones de producción sin renunciar al estándar técnico. El diálogo privado facilita la colaboración y mantiene el enfoque en los hechos.",
 retroalimentacion:{
-A:"Propone aumentar la productividad sin comprobar el impacto en la salud de los operadores.",
-B:"Reduce drásticamente la producción sin analizar opciones que puedan mejorar el método de trabajo.",
-C:"Traslada el conflicto a otra persona en lugar de construir una solución con las áreas involucradas.",
-D:"Correcto. Combina evidencia ergonómica, escucha activa y una prueba piloto para equilibrar productividad y seguridad."
+A:"Correcto sería mantener el estándar, pero una advertencia inmediata puede aumentar la resistencia y cerrar el diálogo.",
+B:"Evitar el conflicto no justifica omitir evidencia necesaria para la auditoría.",
+C:"Correcto. Reconoce las presiones del gerente, explica el propósito de los registros y mantiene una revisión objetiva.",
+D:"Escalar el asunto antes de intentar una conversación directa puede aumentar innecesariamente la tensión."
 }
 },
 {
 numero:2,
-hb:"Negociación basada en evidencia",
-titulo:"Inventario y continuidad operativa",
-texto:"Finanzas propone eliminar el inventario de seguridad mediante una estrategia Justo a Tiempo (JIT) para reducir costos. Producción advierte que los proveedores internacionales tienen tiempos de entrega variables y que un retraso podría detener la fábrica. ¿Qué decisión técnica debe proponerse?",
+hb:"Gestión de la empatía",
+titulo:"",
+texto:"En una planta, los operadores revierten en secreto una estación ergonómica recién instalada porque la nueva postura reduce 5% su velocidad y afecta el bono de productividad. ¿Qué acción refleja una gestión empática y efectiva?",
 opciones:{
-A:"Analizar la variabilidad de las entregas y el costo de una posible parada para calcular un inventario de seguridad adecuado y negociar un nivel de servicio entre ambas áreas.",
-B:"Eliminar todo el inventario de seguridad para cumplir inmediatamente con el objetivo financiero.",
-C:"Comprar tres veces más materiales para evitar cualquier posible desabasto.",
-D:"Cambiar de proveedores internacionales a locales sin verificar costos, capacidad ni especificaciones."
+A:"Aplicar sanciones por modificar el equipo sin autorización y exigir que se utilice.",
+B:"Retirar definitivamente la estación para evitar que los operadores pierdan parte de su bono.",
+C:"Validar su preocupación económica, gestionar con Producción y Recursos Humanos un ajuste temporal de la curva de aprendizaje del bono e involucrar a los operadores en el ajuste fino de la estación.",
+D:"Informar a los operadores que la ergonomía es prioritaria y que deben adaptarse sin discutir el incentivo."
 },
-correcta:"A",
-explicacion:"Utiliza datos para equilibrar el costo de almacenar materiales con el riesgo económico de detener la producción. La negociación debe basarse en indicadores y no en las preferencias aisladas de un departamento.",
+correcta:"C",
+explicacion:"La solución reconoce la preocupación económica, alinea la salud con la estabilidad del ingreso y hace partícipes a los operadores en el rediseño.",
 retroalimentacion:{
-A:"Correcto. El análisis de variabilidad y costos permite definir una protección razonable frente al desabasto y negociar con datos.",
-B:"Eliminar toda protección puede reducir el inventario, pero aumenta el riesgo de detener la producción.",
-C:"Comprar en exceso genera costos de almacenamiento y obsolescencia sin demostrar que sea la mejor solución.",
-D:"Cambiar proveedores sin evaluar su capacidad, calidad y costo puede crear nuevos problemas."
+A:"La sanción no atiende la causa de la resistencia: la preocupación por el ingreso y el incentivo.",
+B:"Retirar la mejora elimina una medida de protección sin buscar una solución equilibrada.",
+C:"Correcto. Atiende la preocupación económica, protege la salud y permite que los operadores participen en la mejora.",
+D:"Imponer la adaptación sin escuchar la preocupación por el bono puede mantener la resistencia."
 }
 },
 {
 numero:3,
-hb:"Comunicación asertiva y negociación",
-titulo:"Retraso en un proyecto",
-texto:"Un proyecto de automatización de una línea de empaque presenta un retraso de tres semanas por la entrega tardía de un sensor importado. La Gerencia de Operaciones exige mantener la fecha original sin aumentar el presupuesto. ¿Cómo debe responder el gerente del proyecto?",
+hb:"Gestión de la empatía",
+titulo:"",
+texto:"Durante la migración de un sistema anterior a uno nuevo en una planta maquiladora, algunos supervisores ingresan datos erróneos deliberadamente. Argumentan que el sistema anterior era mejor y que la nueva interfaz les quita tiempo. ¿Cómo debería actuar el responsable del proyecto?",
 opciones:{
-A:"Omitir algunas pruebas de seguridad para recuperar el tiempo perdido.",
-B:"Esperar hasta la fecha de entrega para informar que el proyecto está retrasado.",
-C:"Cancelar el proyecto sin analizar posibles alternativas de recuperación.",
-D:"Explicar el impacto del retraso y presentar escenarios, como entregas por fases o turnos adicionales, comparando costos, riesgos y efectos sobre la calidad antes de acordar una alternativa."
+A:"Aplicar medidas disciplinarias inmediatas para evitar que continúe el registro incorrecto.",
+B:"Mantener el sistema sin cambios y exigir a los supervisores que completen una capacitación adicional.",
+C:"Organizar una sesión de trabajo para comprender su frustración, identificar las dificultades de uso de la interfaz y co-diseñar simplificaciones con los supervisores.",
+D:"Regresar al sistema anterior para evitar resistencia y retrasos durante la transición."
 },
-correcta:"D",
-explicacion:"Permite negociar con transparencia y evaluar las restricciones de tiempo, costo, alcance y calidad. Se deben escuchar las prioridades del cliente sin prometer resultados que comprometan la seguridad o la calidad.",
+correcta:"C",
+explicacion:"Escuchar a los usuarios finales permite reconocer la curva de aprendizaje y las fricciones reales. Involucrarlos en las mejoras los convierte en coautores del cambio.",
 retroalimentacion:{
-A:"Eliminar pruebas de seguridad puede poner en riesgo a las personas y al equipo.",
-B:"Ocultar el retraso impide que las áreas afectadas evalúen alternativas oportunamente.",
-C:"Cancelar sin estudiar escenarios descarta soluciones posibles antes de analizar su viabilidad.",
-D:"Correcto. Presentar opciones con impactos de costo, tiempo, calidad y riesgo facilita un acuerdo realista."
+A:"La disciplina no resuelve las dificultades de uso que están originando la resistencia.",
+B:"La capacitación puede ayudar, pero primero es necesario escuchar y detectar qué aspectos de la interfaz dificultan el trabajo.",
+C:"Correcto. Escucha a los usuarios, identifica obstáculos reales y los involucra en el diseño de mejoras.",
+D:"Volver al sistema anterior sin analizar el problema descarta el cambio sin explorar alternativas."
 }
 },
 {
 numero:4,
-hb:"Pensamiento crítico y colaboración",
-titulo:"Plan de producción y mantenimiento",
-texto:"Un modelo de programación lineal identifica la combinación de productos que maximiza las utilidades de una planta química. Sin embargo, Mantenimiento advierte que ejecutar el plan a plena capacidad impediría realizar el mantenimiento mayor programado de los reactores. ¿Qué acción demuestra resolución adaptativa del conflicto basada en datos?",
+hb:"Gestión de la empatía",
+titulo:"",
+texto:"Un reactor químico requiere mantenimiento debido a fisuras en sus sellos térmicos. Operaciones se niega a ceder una ventana de ocho horas porque debe cumplir una entrega importante al cliente. ¿Qué respuesta demuestra empatía y criterio técnico?",
 opciones:{
-A:"Mantener el programa original y confiar en que los equipos funcionarán durante todo el periodo.",
-B:"Incorporar la disponibilidad de los equipos como una restricción del modelo, evaluar escenarios de producción y coordinar el mantenimiento para reducir las pérdidas sin ignorar los riesgos.",
-C:"Detener toda la planta durante una semana sin revisar la demanda ni las alternativas.",
-D:"Modificar los registros de mantenimiento para que el modelo acepte el programa original."
+A:"Ordenar el paro inmediato sin considerar el compromiso comercial ni las alternativas operativas.",
+B:"Posponer el mantenimiento hasta terminar el pedido, confiando en que el reactor seguirá funcionando.",
+C:"Comprender el compromiso comercial, presentar datos sobre el riesgo de una falla grave y co-crear una alternativa —como mantenimiento fraccionado o una ventana de baja carga— que proteja la entrega y la integridad del equipo.",
+D:"Trasladar la decisión al cliente para que determine si acepta el riesgo de continuar operando."
 },
-correcta:"B",
-explicacion:"Un modelo de optimización debe representar las restricciones reales del sistema. Escuchar a Mantenimiento y recalcular escenarios permite tomar una decisión viable y reducir el impacto económico.",
+correcta:"C",
+explicacion:"La empatía reconoce los objetivos de Operaciones, pero no minimiza el riesgo. La colaboración permite buscar una alternativa flexible sustentada en evidencia.",
 retroalimentacion:{
-A:"Ignorar el mantenimiento puede provocar fallas, paros imprevistos y mayores costos.",
-B:"Correcto. Incorporar la disponibilidad real y comparar escenarios permite decidir con datos sin ocultar restricciones críticas.",
-C:"Una parada total sin análisis puede generar pérdidas innecesarias si existen alternativas seguras.",
-D:"Alterar registros oculta información importante y no resuelve la restricción real del sistema."
+A:"La seguridad es prioritaria, pero una respuesta unilateral no explora alternativas operativas viables.",
+B:"Posponer el mantenimiento sin evaluar el riesgo puede exponer a la planta a una falla grave.",
+C:"Correcto. Comprende la presión comercial, comunica el riesgo con datos y busca una alternativa segura en colaboración.",
+D:"La responsabilidad técnica no debe trasladarse al cliente ni dejarle aceptar un riesgo que corresponde controlar."
 }
 },
 {
 numero:5,
-hb:"Comunicación asertiva y gestión de riesgos",
-titulo:"Falla en un dispositivo de seguridad",
-texto:"En una planta embotelladora, el sensor de bloqueo de seguridad de una empaquetadora falla de forma intermitente. El supervisor propone anularlo temporalmente para evitar detener la producción durante el turno nocturno. ¿Cómo debe responder el Ingeniero Industrial?",
+hb:"Gestión de la empatía",
+titulo:"",
+texto:"Un especialista de PLC indispensable para un proyecto crítico está cometiendo errores después de atravesar un duelo familiar. El cliente amenaza con aplicar penalizaciones si el proyecto se retrasa. ¿Qué debería hacer su líder?",
 opciones:{
-A:"Permitir la operación si los trabajadores se comprometen a tener mayor precaución.",
-B:"Detener el uso de la máquina, comunicar firmemente el riesgo, aplicar el procedimiento de aislamiento de energías que corresponda y coordinar la reparación antes de autorizar su operación.",
-C:"Discutir con el supervisor y responsabilizar públicamente a los operadores.",
-D:"Informar de la falla al siguiente turno y dejar que el personal entrante decida qué hacer."
+A:"Exigirle que mantenga el ritmo habitual porque el compromiso con el cliente no puede modificarse.",
+B:"Retirarlo del proyecto de manera definitiva y comunicar al equipo que su desempeño no fue suficiente.",
+C:"Hablar con él en privado, reconocer su situación, reasignarlo temporalmente a una revisión técnica remota de menor presión y sumar respaldo para la programación en sitio, protegiendo su bienestar y la continuidad del proyecto.",
+D:"Informar al cliente sobre la situación personal del especialista y solicitar que elimine las penalizaciones."
 },
-correcta:"B",
-explicacion:"La seguridad de las personas no debe sacrificarse para cumplir una meta de producción. La comunicación asertiva establece un límite firme y respetuoso, mientras que el aislamiento de energías y la reparación controlada ayudan a evitar accidentes.",
+correcta:"C",
+explicacion:"La respuesta combina sensibilidad y responsabilidad: protege la dignidad y el bienestar de la persona, redistribuye temporalmente la carga y mantiene el avance del proyecto.",
 retroalimentacion:{
-A:"La precaución personal no sustituye un dispositivo de seguridad que funciona correctamente.",
-B:"Correcto. Se establece un límite de seguridad, se controla la energía peligrosa según el procedimiento y se coordina una reparación segura.",
-C:"Una confrontación agresiva dificulta la colaboración y no sustituye el procedimiento de seguridad.",
-D:"Posponer la respuesta deja un riesgo conocido sin controlar durante el turno actual."
+A:"Exigir el mismo ritmo ignora la situación de la persona y puede aumentar los errores.",
+B:"Retirarlo definitivamente y exponer su situación no es una respuesta proporcional ni respetuosa.",
+C:"Correcto. Ofrece apoyo privado, ajusta temporalmente la carga y suma respaldo para proteger a la persona y al proyecto.",
+D:"Compartir información personal sin necesidad afecta la privacidad y no resuelve la organización del trabajo."
 }
 }
-];
+];;
 
 let currentQuestion = 0;
 let respuestas = Array(preguntas.length).fill(null);
