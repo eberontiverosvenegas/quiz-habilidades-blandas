@@ -67,7 +67,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 
 <header>
 <h1>🧠 Quiz de Habilidades Blandas</h1>
-<p>Semana 6: Gestión de la empatía</p>
+<p>Semana 7: Liderazgo Adaptativo</p>
 </header>
 
 <main>
@@ -101,7 +101,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 </div>
 
 <div class="instructions" style="margin-top:18px">
-<strong>Objetivo:</strong> evaluar la gestión de la empatía en situaciones laborales y profesionales.
+<strong>Objetivo:</strong> evaluar el liderazgo adaptativo ante cambios, resistencia y retos operativos en situaciones laborales.
 <br><br>
 <strong>Instrucciones:</strong> lee cada situación y selecciona la alternativa que representa la actuación más adecuada.
 </div>
@@ -130,7 +130,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 <section class="card" id="resultSection">
 
 <h2>RESULTADO DEL QUIZ</h2>
-<p class="small">Gestión de la empatía</p>
+<p class="small">Liderazgo Adaptativo</p>
 
 <div class="grid" style="margin-bottom:18px">
 <div><b>Alumno:</b><br><span id="resultName"></span></div>
@@ -148,7 +148,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 
 <div class="hb-grid">
 <div class="hb-card">
-<strong>🤝 Gestión de la empatía</strong>
+<strong>🧭 Liderazgo Adaptativo</strong>
 <span id="criticalThinking">0 / 5</span>
 </div>
 </div>
@@ -175,111 +175,111 @@ const URL_APPS_SCRIPT =
 // CONFIGURACIÓN DE ESTA EVALUACIÓN
 // Para el siguiente quiz solo cambia estos valores.
 // =====================================================
-const SEMANA_EVALUACION = "Semana 6";
-const HB_EVALUADAS = "Gestión de la empatía";
+const SEMANA_EVALUACION = "Semana 7";
+const HB_EVALUADAS = "Liderazgo Adaptativo";
 
 const preguntas = [
 {
 numero:1,
-hb:"Gestión de la empatía",
-titulo:"",
-texto:"En una auditoría externa de ISO 9001, el Gerente de Planta se niega a mostrar los registros de No Conformidad. Afirma que las auditorías son burocracia y afectan la producción. Como Auditor Líder, ¿cómo aplicarías la gestión de la empatía de manera estratégica?",
+hb:"Liderazgo Adaptativo",
+titulo:"Implementación de 5S",
+texto:"En una planta manufacturera se implementará la metodología 5S. Los líderes de celda se resisten porque consideran que ordenar las herramientas les quitará tiempo de producción. ¿Qué debería hacer el líder del proyecto?",
 opciones:{
-A:"Insistir en que debe entregar los registros porque es una obligación, advirtiéndole que su negativa será reportada inmediatamente.",
-B:"Omitir la revisión de esos registros para evitar un conflicto con el Gerente de Planta.",
-C:"Conversar en privado, reconocer la presión por cumplir la producción, explicar cómo los registros de No Conformidad ayudan a proteger la operación y acordar una revisión basada en hechos.",
-D:"Solicitar al Director General que intervenga antes de intentar dialogar con el gerente."
+A:"Imponer el nuevo procedimiento y sancionar a quien no lo cumpla.",
+B:"Posponer indefinidamente la implementación para evitar conflictos.",
+C:"Involucrar a los líderes de celda en el diseño de ayudas visuales y demostrar, mediante una prueba piloto, cómo disminuyen los tiempos de búsqueda y de ciclo.",
+D:"Encargar toda la organización de herramientas al departamento de Calidad."
 },
 correcta:"C",
-explicacion:"La empatía permite reconocer la postura defensiva y las presiones de producción sin renunciar al estándar técnico. El diálogo privado facilita la colaboración y mantiene el enfoque en los hechos.",
+explicacion:"El liderazgo adaptativo involucra al equipo y demuestra el valor práctico del cambio. Así, la resistencia puede transformarse en compromiso.",
 retroalimentacion:{
-A:"Correcto sería mantener el estándar, pero una advertencia inmediata puede aumentar la resistencia y cerrar el diálogo.",
-B:"Evitar el conflicto no justifica omitir evidencia necesaria para la auditoría.",
-C:"Correcto. Reconoce las presiones del gerente, explica el propósito de los registros y mantiene una revisión objetiva.",
-D:"Escalar el asunto antes de intentar una conversación directa puede aumentar innecesariamente la tensión."
+A:"Imponer el cambio sin escuchar al equipo puede aumentar la resistencia.",
+B:"Evitar el conflicto no resuelve el problema ni permite avanzar.",
+C:"Correcto. Involucra al equipo y demuestra con datos el beneficio del cambio.",
+D:"Trasladar toda la responsabilidad a Calidad excluye a quienes realizan el trabajo diariamente."
 }
 },
 {
 numero:2,
-hb:"Gestión de la empatía",
-titulo:"",
-texto:"En una planta, los operadores revierten en secreto una estación ergonómica recién instalada porque la nueva postura reduce 5% su velocidad y afecta el bono de productividad. ¿Qué acción refleja una gestión empática y efectiva?",
+hb:"Liderazgo Adaptativo",
+titulo:"Adopción de tecnología MES",
+texto:"Una empresa está sustituyendo los registros en papel por terminales digitales conectadas a un sistema MES. Algunos supervisores con muchos años de experiencia temen no dominar la nueva tecnología. ¿Cuál es la mejor estrategia para facilitar la transición?",
 opciones:{
-A:"Aplicar sanciones por modificar el equipo sin autorización y exigir que se utilice.",
-B:"Retirar definitivamente la estación para evitar que los operadores pierdan parte de su bono.",
-C:"Validar su preocupación económica, gestionar con Producción y Recursos Humanos un ajuste temporal de la curva de aprendizaje del bono e involucrar a los operadores en el ajuste fino de la estación.",
-D:"Informar a los operadores que la ergonomía es prioritaria y que deben adaptarse sin discutir el incentivo."
+A:"Reemplazar a los supervisores que muestran dificultades.",
+B:"Crear acompañamiento con mentores digitales, simplificar la interfaz con sugerencias de los supervisores y reconocer sus avances.",
+C:"Mantener los registros en papel para ese grupo de supervisores.",
+D:"Exigir el uso inmediato del sistema sin capacitación."
 },
-correcta:"C",
-explicacion:"La solución reconoce la preocupación económica, alinea la salud con la estabilidad del ingreso y hace partícipes a los operadores en el rediseño.",
+correcta:"B",
+explicacion:"El liderazgo adaptativo reconoce los temores ante el cambio. El acompañamiento y la participación de los usuarios reducen la resistencia y facilitan el aprendizaje.",
 retroalimentacion:{
-A:"La sanción no atiende la causa de la resistencia: la preocupación por el ingreso y el incentivo.",
-B:"Retirar la mejora elimina una medida de protección sin buscar una solución equilibrada.",
-C:"Correcto. Atiende la preocupación económica, protege la salud y permite que los operadores participen en la mejora.",
-D:"Imponer la adaptación sin escuchar la preocupación por el bono puede mantener la resistencia."
+A:"Reemplazar al personal no atiende la necesidad de capacitación ni aprovecha su experiencia.",
+B:"Correcto. El acompañamiento, la participación y el reconocimiento facilitan la adopción de la tecnología.",
+C:"Mantener dos sistemas sin una estrategia de transición puede generar errores y duplicidad de trabajo.",
+D:"Exigir el cambio sin capacitación aumenta la frustración y los errores."
 }
 },
 {
 numero:3,
-hb:"Gestión de la empatía",
-titulo:"",
-texto:"Durante la migración de un sistema anterior a uno nuevo en una planta maquiladora, algunos supervisores ingresan datos erróneos deliberadamente. Argumentan que el sistema anterior era mejor y que la nueva interfaz les quita tiempo. ¿Cómo debería actuar el responsable del proyecto?",
+hb:"Liderazgo Adaptativo",
+titulo:"Prevención de defectos con PDCA",
+texto:"En una fábrica se busca pasar de la inspección al final de la línea a la prevención de defectos mediante el ciclo PDCA. El personal de Producción percibe que el departamento de Calidad solo busca señalar errores. ¿Qué acción ayudaría a cambiar esta percepción?",
 opciones:{
-A:"Aplicar medidas disciplinarias inmediatas para evitar que continúe el registro incorrecto.",
-B:"Mantener el sistema sin cambios y exigir a los supervisores que completen una capacitación adicional.",
-C:"Organizar una sesión de trabajo para comprender su frustración, identificar las dificultades de uso de la interfaz y co-diseñar simplificaciones con los supervisores.",
-D:"Regresar al sistema anterior para evitar resistencia y retrasos durante la transición."
+A:"Dejar que Calidad implemente el cambio sin involucrar a Producción.",
+B:"Formar equipos multidisciplinarios de Producción y Calidad para analizar las causas de las mermas y mostrar cómo la prevención reduce los reprocesos.",
+C:"Aumentar las inspecciones finales y reportar a los responsables.",
+D:"Eliminar los indicadores de calidad para evitar desacuerdos."
 },
-correcta:"C",
-explicacion:"Escuchar a los usuarios finales permite reconocer la curva de aprendizaje y las fricciones reales. Involucrarlos en las mejoras los convierte en coautores del cambio.",
+correcta:"B",
+explicacion:"La colaboración entre áreas permite alinear objetivos. Al comprobar que prevenir defectos reduce reprocesos, Calidad deja de percibirse como fiscalización y se convierte en un aliado.",
 retroalimentacion:{
-A:"La disciplina no resuelve las dificultades de uso que están originando la resistencia.",
-B:"La capacitación puede ayudar, pero primero es necesario escuchar y detectar qué aspectos de la interfaz dificultan el trabajo.",
-C:"Correcto. Escucha a los usuarios, identifica obstáculos reales y los involucra en el diseño de mejoras.",
-D:"Volver al sistema anterior sin analizar el problema descarta el cambio sin explorar alternativas."
+A:"Excluir a Producción mantiene la percepción de que el cambio se impone desde otra área.",
+B:"Correcto. La colaboración permite compartir responsabilidades y demostrar los beneficios de prevenir defectos.",
+C:"Aumentar la inspección final no desarrolla una cultura de prevención.",
+D:"Eliminar indicadores quita información necesaria para mejorar."
 }
 },
 {
 numero:4,
-hb:"Gestión de la empatía",
-titulo:"",
-texto:"Un reactor químico requiere mantenimiento debido a fisuras en sus sellos térmicos. Operaciones se niega a ceder una ventana de ocho horas porque debe cumplir una entrega importante al cliente. ¿Qué respuesta demuestra empatía y criterio técnico?",
+hb:"Liderazgo Adaptativo",
+titulo:"Seguridad en prensas",
+texto:"Una planta instala barreras optoelectrónicas de seguridad en sus prensas. Algunos operadores desactivan los sensores porque consideran que interrumpen el ritmo de trabajo. ¿Cómo debe actuar el responsable de la implementación?",
 opciones:{
-A:"Ordenar el paro inmediato sin considerar el compromiso comercial ni las alternativas operativas.",
-B:"Posponer el mantenimiento hasta terminar el pedido, confiando en que el reactor seguirá funcionando.",
-C:"Comprender el compromiso comercial, presentar datos sobre el riesgo de una falla grave y co-crear una alternativa —como mantenimiento fraccionado o una ventana de baja carga— que proteja la entrega y la integridad del equipo.",
-D:"Trasladar la decisión al cliente para que determine si acepta el riesgo de continuar operando."
+A:"Permitir que los operadores desactiven los sensores cuando tengan retrasos.",
+B:"Detener la operación insegura, escuchar las dificultades de los operadores y trabajar con el fabricante para ajustar técnicamente la solución sin eliminar la protección.",
+C:"Retirar las barreras para recuperar la productividad.",
+D:"Sancionar a todos los operadores sin investigar por qué desactivan los sensores."
 },
-correcta:"C",
-explicacion:"La empatía reconoce los objetivos de Operaciones, pero no minimiza el riesgo. La colaboración permite buscar una alternativa flexible sustentada en evidencia.",
+correcta:"B",
+explicacion:"La seguridad es un estándar no negociable. El liderazgo adaptativo escucha los obstáculos y busca ajustes técnicos que resuelvan el problema sin poner en riesgo a las personas.",
 retroalimentacion:{
-A:"La seguridad es prioritaria, pero una respuesta unilateral no explora alternativas operativas viables.",
-B:"Posponer el mantenimiento sin evaluar el riesgo puede exponer a la planta a una falla grave.",
-C:"Correcto. Comprende la presión comercial, comunica el riesgo con datos y busca una alternativa segura en colaboración.",
-D:"La responsabilidad técnica no debe trasladarse al cliente ni dejarle aceptar un riesgo que corresponde controlar."
+A:"Permitir la desactivación de sensores expone a los operadores a lesiones graves.",
+B:"Correcto. Se mantiene la protección y se atienden las dificultades mediante ajustes técnicos seguros.",
+C:"Retirar las barreras elimina una protección esencial para recuperar producción.",
+D:"Sancionar sin investigar las causas no resuelve los obstáculos que generan la conducta."
 }
 },
 {
 numero:5,
-hb:"Gestión de la empatía",
-titulo:"",
-texto:"Un especialista de PLC indispensable para un proyecto crítico está cometiendo errores después de atravesar un duelo familiar. El cliente amenaza con aplicar penalizaciones si el proyecto se retrasa. ¿Qué debería hacer su líder?",
+hb:"Liderazgo Adaptativo",
+titulo:"Cambio de proveedores",
+texto:"Una interrupción logística internacional obliga a una empresa a buscar proveedores locales. Compras quiere cambiar rápidamente de proveedor, mientras que Calidad teme que los nuevos materiales no cumplan las especificaciones. ¿Qué decisión permite mantener la continuidad sin comprometer la calidad?",
 opciones:{
-A:"Exigirle que mantenga el ritmo habitual porque el compromiso con el cliente no puede modificarse.",
-B:"Retirarlo del proyecto de manera definitiva y comunicar al equipo que su desempeño no fue suficiente.",
-C:"Hablar con él en privado, reconocer su situación, reasignarlo temporalmente a una revisión técnica remota de menor presión y sumar respaldo para la programación en sitio, protegiendo su bienestar y la continuidad del proyecto.",
-D:"Informar al cliente sobre la situación personal del especialista y solicitar que elimine las penalizaciones."
+A:"Autorizar cualquier material disponible para evitar detener la producción.",
+B:"Rechazar todos los proveedores locales sin realizar pruebas.",
+C:"Crear una matriz de dispensas temporales controladas y realizar pruebas aceleradas para validar los materiales alternativos antes de utilizarlos.",
+D:"Dejar que Compras decida sin consultar a Calidad."
 },
 correcta:"C",
-explicacion:"La respuesta combina sensibilidad y responsabilidad: protege la dignidad y el bienestar de la persona, redistribuye temporalmente la carga y mantiene el avance del proyecto.",
+explicacion:"La respuesta requiere gestionar riesgos y construir acuerdos entre áreas. La validación controlada permite dar continuidad al suministro sin poner en riesgo la calidad ni la satisfacción del cliente.",
 retroalimentacion:{
-A:"Exigir el mismo ritmo ignora la situación de la persona y puede aumentar los errores.",
-B:"Retirarlo definitivamente y exponer su situación no es una respuesta proporcional ni respetuosa.",
-C:"Correcto. Ofrece apoyo privado, ajusta temporalmente la carga y suma respaldo para proteger a la persona y al proyecto.",
-D:"Compartir información personal sin necesidad afecta la privacidad y no resuelve la organización del trabajo."
+A:"Aceptar materiales sin validación puede generar defectos y afectar al cliente.",
+B:"Rechazar opciones sin evaluarlas limita alternativas para responder a la interrupción logística.",
+C:"Correcto. La validación controlada permite equilibrar continuidad operativa y calidad.",
+D:"Excluir a Calidad impide verificar que los materiales cumplan las especificaciones."
 }
 }
-];;
+];
 
 let currentQuestion = 0;
 let respuestas = Array(preguntas.length).fill(null);
@@ -483,7 +483,7 @@ const datos={
   p5:respuestas[4],
   aciertos:result.aciertos,
   calificacionGeneral:result.calificacion.toFixed(1),
-  desempenoHB:`Resolución adaptativa de conflictos: ${result.pensamientoCritico}/5`
+  desempenoHB:`Liderazgo Adaptativo: ${result.pensamientoCritico}/5`
 };
 
 const status=document.getElementById("saveStatus");
