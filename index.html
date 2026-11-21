@@ -67,7 +67,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 
 <header>
 <h1>🧠 Quiz de Habilidades Blandas</h1>
-<p>Semana 7: Liderazgo Adaptativo</p>
+<p>Semana 8: Gestión de Crisis bajo Presión</p>
 </header>
 
 <main>
@@ -101,7 +101,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 </div>
 
 <div class="instructions" style="margin-top:18px">
-<strong>Objetivo:</strong> evaluar el liderazgo adaptativo ante cambios, resistencia y retos operativos en situaciones laborales.
+<strong>Objetivo:</strong> evaluar la gestión de crisis bajo presión mediante decisiones técnicas, resiliencia operativa y análisis de riesgos.
 <br><br>
 <strong>Instrucciones:</strong> lee cada situación y selecciona la alternativa que representa la actuación más adecuada.
 </div>
@@ -130,7 +130,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 <section class="card" id="resultSection">
 
 <h2>RESULTADO DEL QUIZ</h2>
-<p class="small">Liderazgo Adaptativo</p>
+<p class="small">Gestión de Crisis bajo Presión</p>
 
 <div class="grid" style="margin-bottom:18px">
 <div><b>Alumno:</b><br><span id="resultName"></span></div>
@@ -148,7 +148,7 @@ input,select{width:100%;padding:11px;border:1px solid #bbb;border-radius:7px;fon
 
 <div class="hb-grid">
 <div class="hb-card">
-<strong>🧭 Liderazgo Adaptativo</strong>
+<strong>Gestión de Crisis bajo Presión</strong>
 <span id="criticalThinking">0 / 5</span>
 </div>
 </div>
@@ -175,110 +175,110 @@ const URL_APPS_SCRIPT =
 // CONFIGURACIÓN DE ESTA EVALUACIÓN
 // Para el siguiente quiz solo cambia estos valores.
 // =====================================================
-const SEMANA_EVALUACION = "Semana 7";
-const HB_EVALUADAS = "Liderazgo Adaptativo";
+const SEMANA_EVALUACION = "Semana 8";
+const HB_EVALUADAS = "Gestión de Crisis bajo Presión";
 
 const preguntas = [
-{
-numero:1,
-hb:"Liderazgo Adaptativo",
-titulo:"Implementación de 5S",
-texto:"En una planta manufacturera se implementará la metodología 5S. Los líderes de celda se resisten porque consideran que ordenar las herramientas les quitará tiempo de producción. ¿Qué debería hacer el líder del proyecto?",
-opciones:{
-A:"Imponer el nuevo procedimiento y sancionar a quien no lo cumpla.",
-B:"Posponer indefinidamente la implementación para evitar conflictos.",
-C:"Involucrar a los líderes de celda en el diseño de ayudas visuales y demostrar, mediante una prueba piloto, cómo disminuyen los tiempos de búsqueda y de ciclo.",
-D:"Encargar toda la organización de herramientas al departamento de Calidad."
-},
-correcta:"C",
-explicacion:"El liderazgo adaptativo involucra al equipo y demuestra el valor práctico del cambio. Así, la resistencia puede transformarse en compromiso.",
-retroalimentacion:{
-A:"Imponer el cambio sin escuchar al equipo puede aumentar la resistencia.",
-B:"Evitar el conflicto no resuelve el problema ni permite avanzar.",
-C:"Correcto. Involucra al equipo y demuestra con datos el beneficio del cambio.",
-D:"Trasladar toda la responsabilidad a Calidad excluye a quienes realizan el trabajo diariamente."
-}
-},
-{
-numero:2,
-hb:"Liderazgo Adaptativo",
-titulo:"Adopción de tecnología MES",
-texto:"Una empresa está sustituyendo los registros en papel por terminales digitales conectadas a un sistema MES. Algunos supervisores con muchos años de experiencia temen no dominar la nueva tecnología. ¿Cuál es la mejor estrategia para facilitar la transición?",
-opciones:{
-A:"Reemplazar a los supervisores que muestran dificultades.",
-B:"Crear acompañamiento con mentores digitales, simplificar la interfaz con sugerencias de los supervisores y reconocer sus avances.",
-C:"Mantener los registros en papel para ese grupo de supervisores.",
-D:"Exigir el uso inmediato del sistema sin capacitación."
-},
-correcta:"B",
-explicacion:"El liderazgo adaptativo reconoce los temores ante el cambio. El acompañamiento y la participación de los usuarios reducen la resistencia y facilitan el aprendizaje.",
-retroalimentacion:{
-A:"Reemplazar al personal no atiende la necesidad de capacitación ni aprovecha su experiencia.",
-B:"Correcto. El acompañamiento, la participación y el reconocimiento facilitan la adopción de la tecnología.",
-C:"Mantener dos sistemas sin una estrategia de transición puede generar errores y duplicidad de trabajo.",
-D:"Exigir el cambio sin capacitación aumenta la frustración y los errores."
-}
-},
-{
-numero:3,
-hb:"Liderazgo Adaptativo",
-titulo:"Prevención de defectos con PDCA",
-texto:"En una fábrica se busca pasar de la inspección al final de la línea a la prevención de defectos mediante el ciclo PDCA. El personal de Producción percibe que el departamento de Calidad solo busca señalar errores. ¿Qué acción ayudaría a cambiar esta percepción?",
-opciones:{
-A:"Dejar que Calidad implemente el cambio sin involucrar a Producción.",
-B:"Formar equipos multidisciplinarios de Producción y Calidad para analizar las causas de las mermas y mostrar cómo la prevención reduce los reprocesos.",
-C:"Aumentar las inspecciones finales y reportar a los responsables.",
-D:"Eliminar los indicadores de calidad para evitar desacuerdos."
-},
-correcta:"B",
-explicacion:"La colaboración entre áreas permite alinear objetivos. Al comprobar que prevenir defectos reduce reprocesos, Calidad deja de percibirse como fiscalización y se convierte en un aliado.",
-retroalimentacion:{
-A:"Excluir a Producción mantiene la percepción de que el cambio se impone desde otra área.",
-B:"Correcto. La colaboración permite compartir responsabilidades y demostrar los beneficios de prevenir defectos.",
-C:"Aumentar la inspección final no desarrolla una cultura de prevención.",
-D:"Eliminar indicadores quita información necesaria para mejorar."
-}
-},
-{
-numero:4,
-hb:"Liderazgo Adaptativo",
-titulo:"Seguridad en prensas",
-texto:"Una planta instala barreras optoelectrónicas de seguridad en sus prensas. Algunos operadores desactivan los sensores porque consideran que interrumpen el ritmo de trabajo. ¿Cómo debe actuar el responsable de la implementación?",
-opciones:{
-A:"Permitir que los operadores desactiven los sensores cuando tengan retrasos.",
-B:"Detener la operación insegura, escuchar las dificultades de los operadores y trabajar con el fabricante para ajustar técnicamente la solución sin eliminar la protección.",
-C:"Retirar las barreras para recuperar la productividad.",
-D:"Sancionar a todos los operadores sin investigar por qué desactivan los sensores."
-},
-correcta:"B",
-explicacion:"La seguridad es un estándar no negociable. El liderazgo adaptativo escucha los obstáculos y busca ajustes técnicos que resuelvan el problema sin poner en riesgo a las personas.",
-retroalimentacion:{
-A:"Permitir la desactivación de sensores expone a los operadores a lesiones graves.",
-B:"Correcto. Se mantiene la protección y se atienden las dificultades mediante ajustes técnicos seguros.",
-C:"Retirar las barreras elimina una protección esencial para recuperar producción.",
-D:"Sancionar sin investigar las causas no resuelve los obstáculos que generan la conducta."
-}
-},
-{
-numero:5,
-hb:"Liderazgo Adaptativo",
-titulo:"Cambio de proveedores",
-texto:"Una interrupción logística internacional obliga a una empresa a buscar proveedores locales. Compras quiere cambiar rápidamente de proveedor, mientras que Calidad teme que los nuevos materiales no cumplan las especificaciones. ¿Qué decisión permite mantener la continuidad sin comprometer la calidad?",
-opciones:{
-A:"Autorizar cualquier material disponible para evitar detener la producción.",
-B:"Rechazar todos los proveedores locales sin realizar pruebas.",
-C:"Crear una matriz de dispensas temporales controladas y realizar pruebas aceleradas para validar los materiales alternativos antes de utilizarlos.",
-D:"Dejar que Compras decida sin consultar a Calidad."
-},
-correcta:"C",
-explicacion:"La respuesta requiere gestionar riesgos y construir acuerdos entre áreas. La validación controlada permite dar continuidad al suministro sin poner en riesgo la calidad ni la satisfacción del cliente.",
-retroalimentacion:{
-A:"Aceptar materiales sin validación puede generar defectos y afectar al cliente.",
-B:"Rechazar opciones sin evaluarlas limita alternativas para responder a la interrupción logística.",
-C:"Correcto. La validación controlada permite equilibrar continuidad operativa y calidad.",
-D:"Excluir a Calidad impide verificar que los materiales cumplan las especificaciones."
-}
-}
+  {
+    "numero": 1,
+    "hb": "Gestión de Crisis bajo Presión",
+    "titulo": "Continuidad operativa y control del riesgo",
+    "texto": "En una planta automotriz, el motor de la banda del área de pintura se detiene por sobrecalentamiento. La gerencia estima pérdidas de 5,000 USD por minuto. Mantenimiento considera que podría reiniciarse después de una revisión visual, pero todavía no identifica la causa del sobrecalentamiento. Existe una línea secundaria con capacidad limitada. ¿Qué decisión ofrece el mejor equilibrio entre continuidad operativa y control del riesgo?",
+    "opciones": {
+      "A": "Trasladar toda la producción a la línea secundaria y posponer el diagnóstico hasta recuperar el volumen acumulado.",
+      "B": "Mantener el equipo aislado, verificar la causa y las condiciones de seguridad, activar la línea secundaria según su capacidad y establecer prioridades de producción.",
+      "C": "Solicitar a Mantenimiento una reparación inmediata y mantener detenida toda el área hasta recibir una estimación definitiva del tiempo de recuperación.",
+      "D": "Autorizar un reinicio de prueba con carga reducida, monitorear la temperatura y detener nuevamente si aparecen alarmas."
+    },
+    "correcta": "B",
+    "explicacion": "Esta decisión controla la fuente del riesgo, aprovecha una alternativa disponible y administra la capacidad limitada sin convertir la presión económica en una autorización insegura.",
+    "retroalimentacion": {
+      "A": "La desviación puede sostener temporalmente la producción, pero utilizar toda la capacidad sin diagnóstico ni evaluación de restricciones puede generar otro cuello de botella y prolongar la falla.",
+      "B": "Correcto. Controla el riesgo, aprovecha una alternativa disponible y administra la capacidad limitada sin comprometer la seguridad.",
+      "C": "La reparación es necesaria, pero no evaluar la alternativa secundaria ni priorizar órdenes de producción desaprovecha oportunidades de continuidad controlada.",
+      "D": "El monitoreo posterior no sustituye la identificación de la causa ni la verificación de las condiciones eléctricas y mecánicas antes de energizar el equipo."
+    }
+  },
+  {
+    "numero": 2,
+    "hb": "Gestión de Crisis bajo Presión",
+    "titulo": "Contención ante incertidumbre de calidad",
+    "texto": "Una planta de alimentos recibe un resultado microbiológico fuera de especificación para un lote de 20 toneladas. Parte del producto está en camiones y otra parte permanece en almacén. El laboratorio debe confirmar el resultado mediante una segunda prueba, pero el transporte continúa hacia distintos centros de distribución. ¿Cuál es la respuesta más sólida ante la incertidumbre?",
+    "opciones": {
+      "A": "Esperar la confirmación analítica antes de detener los embarques, para evitar una retención innecesaria.",
+      "B": "Retener únicamente el producto almacenado y solicitar a los centros de distribución que inspeccionen visualmente los embarques recibidos.",
+      "C": "Ordenar el retiro total de todos los productos fabricados durante el turno y comunicar públicamente que existe contaminación confirmada.",
+      "D": "Activar una retención preventiva identificable por lote, localizar y detener los embarques, preservar muestras y coordinar la confirmación analítica antes de definir la disposición."
+    },
+    "correcta": "D",
+    "explicacion": "La respuesta limita la exposición, conserva evidencia para la investigación y permite decidir con trazabilidad sin anticipar una conclusión analítica.",
+    "retroalimentacion": {
+      "A": "La confirmación aporta evidencia adicional, pero esperar sin contener el producto permite ampliar la exposición mientras persiste una señal de riesgo.",
+      "B": "La inspección visual no permite descartar una desviación microbiológica y la medida deja sin control efectivo el producto en tránsito.",
+      "C": "Una contención debe tener alcance sustentado en la trazabilidad; afirmar contaminación confirmada antes de completar la evaluación excede la evidencia disponible.",
+      "D": "Correcto. Limita la exposición, conserva evidencia para la investigación y permite decidir con trazabilidad sin anticipar una conclusión analítica."
+    }
+  },
+  {
+    "numero": 3,
+    "hb": "Gestión de Crisis bajo Presión",
+    "titulo": "Abastecimiento alternativo y reprogramación",
+    "texto": "Un huracán interrumpe durante tres semanas el suministro de un semiconductor. La planta cuenta con inventario para cuatro horas. Compras identifica un componente local con características eléctricas similares, pero todavía no existe evidencia de compatibilidad en condiciones reales. ¿Qué estrategia permite gestionar la crisis sin introducir una nueva fuente de fallas?",
+    "opciones": {
+      "A": "Solicitar una homologación acelerada con pruebas definidas por Ingeniería y Calidad, mientras se reprograman los modelos que no requieren el componente.",
+      "B": "Detener todos los modelos y conservar el inventario disponible hasta que el proveedor principal reanude sus entregas.",
+      "C": "Distribuir el inventario restante entre todos los modelos para mantener activa cada línea y reducir el impacto de la interrupción.",
+      "D": "Autorizar la compra del sustituto y utilizarlo en toda la producción mientras Ingeniería prepara la documentación de equivalencia."
+    },
+    "correcta": "A",
+    "explicacion": "La estrategia combina validación técnica controlada, coordinación entre áreas y continuidad parcial de la producción sin asumir compatibilidad no demostrada.",
+    "retroalimentacion": {
+      "A": "Correcto. Combina validación técnica controlada, coordinación entre áreas y continuidad parcial sin asumir compatibilidad no demostrada.",
+      "B": "Esta decisión protege el inventario, pero omite analizar si existen productos o configuraciones que puedan fabricarse sin el componente afectado.",
+      "C": "Distribuir un recurso crítico sin priorizar su utilización puede agotar el inventario en productos de menor importancia y acelerar la interrupción de los modelos prioritarios.",
+      "D": "La similitud de características no demuestra equivalencia funcional; introducirlo antes de validarlo puede generar fallas de producto y riesgos de calidad."
+    }
+  },
+  {
+    "numero": 4,
+    "hb": "Gestión de Crisis bajo Presión",
+    "titulo": "Respuesta ante una posible exposición",
+    "texto": "En una celda robotizada de soldadura se activa una alarma de ventilación por una posible fuga de gas inerte. El sensor presenta intermitencias y el supervisor informa que faltan 50 piezas para cumplir el contrato del turno. El equipo de Seguridad Industrial aún no determina la concentración ambiental. ¿Cuál es la respuesta profesional más adecuada?",
+    "opciones": {
+      "A": "Mantener la celda detenida, pero permitir que el personal permanezca en el área hasta que el sensor confirme una alarma continua.",
+      "B": "Reiniciar el sistema de ventilación y realizar una prueba de producción breve para comprobar si la alarma vuelve a activarse.",
+      "C": "Suspender la celda, aplicar el procedimiento de emergencia, verificar las condiciones atmosféricas mediante personal autorizado y definir la reanudación con base en resultados.",
+      "D": "Detener la celda durante el resto del turno y reprogramar la producción sin solicitar una evaluación técnica adicional."
+    },
+    "correcta": "C",
+    "explicacion": "La decisión evita asumir que una alarma intermitente equivale a una condición segura y establece criterios verificables antes de autorizar el retorno a la operación.",
+    "retroalimentacion": {
+      "A": "La intermitencia del sensor no descarta una condición peligrosa; esperar una señal continua puede prolongar una exposición que todavía no ha sido evaluada.",
+      "B": "Una prueba de producción no sustituye la evaluación ambiental y puede exponer al personal antes de determinar si existen condiciones seguras.",
+      "C": "Correcto. Evita asumir que una alarma intermitente equivale a una condición segura y establece criterios verificables antes de reanudar la operación.",
+      "D": "Detener la operación evita una exposición inmediata, pero cerrar el evento sin investigar la condición ni establecer criterios de retorno deja sin resolver la causa de la alarma."
+    }
+  },
+  {
+    "numero": 5,
+    "hb": "Gestión de Crisis bajo Presión",
+    "titulo": "Auditoría, impacto del producto y acción correctiva",
+    "texto": "Durante una auditoría de un cliente internacional se identifica una desviación mayor en la calibración de instrumentos. Algunos lotes ya fueron liberados utilizando esas mediciones. El gerente de planta solicita cerrar el hallazgo ese mismo día para evitar afectar la renovación del contrato. ¿Qué actuación demuestra una gestión de crisis técnicamente sólida?",
+    "opciones": {
+      "A": "Recalibrar los instrumentos, documentar la actividad y solicitar al auditor que considere corregida la desviación.",
+      "B": "Iniciar un análisis de causa raíz completo y posponer cualquier decisión sobre los lotes hasta concluir la investigación.",
+      "C": "Solicitar al auditor un plazo de respuesta y continuar utilizando los instrumentos mientras se prepara el expediente documental.",
+      "D": "Contener las decisiones de liberación relacionadas, evaluar retrospectivamente los resultados afectados, presentar evidencia de corrección inmediata y establecer responsables y plazos para la acción correctiva."
+    },
+    "correcta": "D",
+    "explicacion": "La respuesta aborda el impacto potencial del producto, distingue la corrección inmediata de la acción correctiva y presenta un plan verificable ante el auditor.",
+    "retroalimentacion": {
+      "A": "La recalibración atiende el estado actual del instrumento, pero no determina si las mediciones anteriores fueron válidas ni qué lotes pudieron resultar afectados.",
+      "B": "El análisis de causa es necesario, pero posponer la evaluación de los lotes deja sin controlar un posible impacto sobre producto ya liberado.",
+      "C": "Un plazo de respuesta no autoriza continuar utilizando instrumentos cuya confiabilidad está cuestionada ni controla el producto potencialmente afectado.",
+      "D": "Correcto. Aborda el impacto potencial del producto, distingue la corrección inmediata de la acción correctiva y presenta un plan verificable."
+    }
+  }
 ];
 
 let currentQuestion = 0;
@@ -336,8 +336,8 @@ const opciones=Object.entries(p.opciones).map(([letra,texto])=>`
 `).join("");
 
 div.innerHTML=`
-<div class="question-number">HABILIDAD: ${p.hb}</div>
-<h3>Pregunta ${p.numero}</h3>
+<div class="question-number">PREGUNTA ${p.numero}</div>
+<h3>${p.titulo}</h3>
 <p>${p.texto}</p>
 ${opciones}
 `;
@@ -440,7 +440,7 @@ document.getElementById("resultWeek").textContent=SEMANA_EVALUACION;
 document.getElementById("resultDate").textContent=new Date().toLocaleString("es-MX",{dateStyle:"short",timeStyle:"short"});
 document.getElementById("scoreNumber").textContent=calificacion.toFixed(1);
 document.getElementById("correctCount").textContent=`${aciertos}/5`;
-document.getElementById("criticalThinking").textContent=`${aciertos}/5`;
+document.getElementById("criticalThinking").textContent=`${aciertos} / 5`;
 renderReview();
 return {aciertos,calificacion,pensamientoCritico:aciertos};
 }
@@ -455,7 +455,7 @@ preguntas.forEach((p,i)=>{
  card.className="question-result "+(correcta?"correct":"incorrect");
  card.innerHTML=`
  <div class="result-head"><strong>Pregunta ${p.numero}</strong><span class="${correcta?"correct-text":"incorrect-text"}">${correcta?"✓ CORRECTA":"✗ INCORRECTA"}</span></div>
- <p><b>Habilidad:</b> ${p.hb}</p>
+ <p><b>Situación:</b> ${p.titulo}</p>
  <div class="answer-row">
  <div class="answer-box"><span>Tu respuesta</span><strong>${respuesta}) ${p.opciones[respuesta]}</strong></div>
  <div class="answer-box"><span>Respuesta correcta</span><strong>${p.correcta}) ${p.opciones[p.correcta]}</strong></div>
@@ -483,7 +483,7 @@ const datos={
   p5:respuestas[4],
   aciertos:result.aciertos,
   calificacionGeneral:result.calificacion.toFixed(1),
-  desempenoHB:`Liderazgo Adaptativo: ${result.pensamientoCritico}/5`
+  desempenoHB:`Gestión de Crisis bajo Presión: ${result.pensamientoCritico}/5`
 };
 
 const status=document.getElementById("saveStatus");
